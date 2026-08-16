@@ -1,0 +1,18 @@
+<!-- @dsCard group="Components" viewport="700x280" name="Navigation (NavBar, Footer)" -->
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="../../preview-runtime.js"></script>
+</head>
+<body style="margin:0;background:var(--bg-0);font-family:var(--font-sans)">
+<div id="root"></div>
+<script>
+var h = React.createElement;
+var demo = h('div', null, h(DS.NavBar, {active:'Leaderboard'}), h(DS.Footer));
+ReactDOM.createRoot(document.getElementById('root')).render(demo);
+</script>
+</body>
+</html>

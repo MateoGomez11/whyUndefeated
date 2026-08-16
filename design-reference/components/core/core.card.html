@@ -1,0 +1,35 @@
+<!-- @dsCard group="Components" viewport="700x460" name="Core (Button, Badge, Card)" -->
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="../../preview-runtime.js"></script>
+</head>
+<body style="margin:0;background:var(--bg-0);padding:24px;font-family:var(--font-sans)">
+<div id="root"></div>
+<script>
+var h = React.createElement;
+var Button = DS.Button, Badge = DS.Badge, Card = DS.Card;
+var demo = h('div', {style:{display:'flex',flexDirection:'column',gap:20}},
+  h('div', {style:{display:'flex',gap:12,alignItems:'center',flexWrap:'wrap'}},
+    h(Button, {variant:'primary'}, 'Track this app'),
+    h(Button, {variant:'secondary'}, 'View evidence'),
+    h(Button, {variant:'ghost'}, 'Skip'),
+    h(Button, {variant:'primary', disabled:true}, 'Disabled')
+  ),
+  h('div', {style:{display:'flex',gap:8}},
+    h(Badge, null, 'Social'),
+    h(Badge, null, 'Content'),
+    h(Badge, {tone:'brand'}, 'Featured')
+  ),
+  h(Card, {style:{maxWidth:340}},
+    h('div', {style:{color:'var(--fg-primary)',fontWeight:600,marginBottom:6}}, 'Reddit'),
+    h('div', {style:{color:'var(--fg-secondary)',fontSize:13}}, 'Community-driven discussion at scale.')
+  )
+);
+ReactDOM.createRoot(document.getElementById('root')).render(demo);
+</script>
+</body>
+</html>

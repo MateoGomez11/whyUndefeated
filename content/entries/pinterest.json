@@ -1,0 +1,20 @@
+{
+  "slug": "pinterest",
+  "appName": "Pinterest",
+  "threatLevel": "low",
+  "category": "Content",
+  "summary": "A visual taste graph tied to shopping intent — hard for a text-first model to replace.",
+  "moat": "Pinterest's moat is a human-curated visual taste graph mapping billions of images to concrete purchase intent, monetized through commerce. Generative image tools can produce inspiration, but they lack Pinterest's link between a saved idea, a real product, and a shopper ready to buy, which keeps advertisers and users anchored to the platform.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Generative image tools (e.g. Midjourney)",
+      "evidence": "Text-to-image generators offer on-demand inspiration, but report no shopping/commerce graph tying images to purchasable products.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Pinterest Q4 2024 shareholder letter", "url": "https://investor.pinterestinc.com/news-and-events/press-releases/default.aspx" },
+    { "id": "s2", "label": "Midjourney — official site", "url": "https://www.midjourney.com/" }
+  ]
+}

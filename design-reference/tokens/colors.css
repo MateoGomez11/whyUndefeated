@@ -1,0 +1,49 @@
+:root {
+  /* ---- Neutral surfaces (cool near-black) ---- */
+  --bg-0: #0a0a0f;      /* page background */
+  --bg-1: #101018;      /* raised panel / row */
+  --bg-2: #16161f;      /* card */
+  --bg-3: #1d1d29;      /* card hover / active */
+  --border-subtle: #221f30;
+  --border-default: #34324a;
+  --border-strong: #4a4768;
+
+  /* ---- Foreground ---- */
+  --fg-primary: #f1f1f6;
+  --fg-secondary: #a3a1b8;
+  --fg-tertiary: #6d6b85;
+  --fg-disabled: #4a4860;
+
+  /* ---- Brand accent: electric violet (the ONE decorative accent) ---- */
+  --brand-300: #c4b5fd;
+  --brand-400: #a78bfa;
+  --brand-500: #8b5cf6;
+  --brand-600: #7c3aed;
+  --brand-700: #6d28d9;
+  --brand-tint-08: oklch(58% 0.24 293 / 0.08);
+  --brand-tint-15: oklch(58% 0.24 293 / 0.15);
+  --brand-tint-25: oklch(58% 0.24 293 / 0.25);
+  --brand-glow: oklch(58% 0.24 293 / 0.45);
+  --brand-glow-soft: oklch(58% 0.24 293 / 0.22);
+
+  /* ---- Semantic threat tiers: INDEPENDENT color system ----
+     Never reused decoratively elsewhere on the site. */
+  --threat-high: #f0453a;
+  --threat-high-bg: oklch(23% 0.06 25);
+  --threat-high-border: oklch(45% 0.14 25);
+  --threat-high-glow: oklch(55% 0.19 25 / 0.35);
+
+  --threat-medium: #f2b13c;
+  --threat-medium-bg: oklch(24% 0.05 85);
+  --threat-medium-border: oklch(50% 0.1 85);
+  --threat-medium-glow: oklch(75% 0.14 85 / 0.3);
+
+  --threat-low: #35d68e;
+  --threat-low-bg: oklch(23% 0.05 155);
+  --threat-low-border: oklch(45% 0.11 155);
+  --threat-low-glow: oklch(68% 0.16 155 / 0.3);
+
+  /* ---- Links ---- */
+  --link: var(--brand-400);
+  --link-hover: var(--brand-300);
+}

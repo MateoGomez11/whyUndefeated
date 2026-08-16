@@ -1,0 +1,20 @@
+{
+  "slug": "tiktok",
+  "appName": "TikTok",
+  "threatLevel": "low",
+  "category": "Content",
+  "summary": "A recommendation engine and creator economy AI can feed, but not yet replace.",
+  "moat": "TikTok's moat is a recommendation system trained on enormous real-time behavioral signals plus a creator economy of humans performing for an audience. AI can generate clips, but the platform's value is the feedback loop between authentic creators, live cultural trends, and a ranking model that keeps attention — a network effect that generated video alone does not supply.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI-generated short-form video tools",
+      "evidence": "Generative video models can produce clips on demand, but rank no personalized feed and hold no creator/audience network.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "TikTok — how the For You feed works", "url": "https://newsroom.tiktok.com/en-us/how-tiktok-recommends-content" },
+    { "id": "s2", "label": "OpenAI Sora", "url": "https://openai.com/sora/" }
+  ]
+}

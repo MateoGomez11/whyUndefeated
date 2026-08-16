@@ -1,0 +1,4 @@
+# Reference-only material — not shipped to production.
+# design-reference/ is the Claude Design export used as the visual source of truth
+# during implementation; it is never imported by the app and must not be deployed.
+design-reference/

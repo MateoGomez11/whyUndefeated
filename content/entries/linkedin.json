@@ -1,0 +1,20 @@
+{
+  "slug": "linkedin",
+  "appName": "LinkedIn",
+  "threatLevel": "low",
+  "category": "Social",
+  "summary": "A verified professional identity graph that doubles as the hiring system of record.",
+  "moat": "LinkedIn's moat is a verified professional identity graph — real names, employment history, and connections — that functions as the system of record for recruiting and B2B reach, backed by Microsoft. AI can draft posts and messages, but it cannot manufacture the trusted, cross-verified professional network that employers and salespeople depend on, which keeps LinkedIn's data uniquely defensible.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI writing assistants",
+      "evidence": "AI tools automate posts and outreach copy, but hold no verified professional graph or hiring-workflow integration.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "LinkedIn — about (member statistics)", "url": "https://about.linkedin.com/" },
+    { "id": "s2", "label": "Microsoft Copilot", "url": "https://www.microsoft.com/en-us/microsoft-copilot" }
+  ]
+}

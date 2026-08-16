@@ -1,0 +1,29 @@
+:root {
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-normal: 220ms;
+  --duration-slow: 420ms;
+
+  /* No heavy drop shadows — depth comes from violet glow + borders */
+  --shadow-card: 0 1px 0 rgba(0,0,0,0.4);
+  --glow-hover: 0 0 0 1px var(--brand-500), 0 0 24px var(--brand-glow-soft);
+  --glow-active: 0 0 0 1px var(--brand-400), 0 0 32px var(--brand-glow);
+}
+
+@keyframes ds-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes ds-fade-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes ds-glow-pulse { 0%, 100% { box-shadow: var(--glow-hover); } 50% { box-shadow: var(--glow-active); } }
+@keyframes ds-digit-flip { 0% { transform: translateY(-6px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+
+.ds-cursor::after {
+  content: '';
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 0.15em;
+  background: var(--brand-500);
+  vertical-align: -0.15em;
+  animation: ds-blink 1s step-end infinite;
+}
+
+.ds-fade-in { animation: ds-fade-slide-in var(--duration-slow) var(--ease-standard) both; }

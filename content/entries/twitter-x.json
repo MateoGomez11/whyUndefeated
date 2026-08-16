@@ -1,0 +1,20 @@
+{
+  "slug": "twitter-x",
+  "appName": "Twitter/X",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "Real-time public conversation, now tightly coupled to its own in-house AI.",
+  "moat": "X's moat is the real-time firehose of public reaction during breaking events — a live social graph and attention layer that static models cannot reproduce. Its exposure is that the same platform routes users to Grok for synthesized answers, and rival real-time networks are competing for the culture-defining conversation that gives X its relevance.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Bluesky",
+      "evidence": "Bluesky surpassed 30 million users in 2025, drawing away communities seeking a real-time public timeline.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "xAI — Grok announcement", "url": "https://x.ai/news/grok" },
+    { "id": "s2", "label": "The Verge — Bluesky user growth", "url": "https://www.theverge.com/2024/11/13/24295543/bluesky-20-million-users-x-threads" }
+  ]
+}

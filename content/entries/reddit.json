@@ -1,0 +1,20 @@
+{
+  "slug": "reddit",
+  "appName": "Reddit",
+  "threatLevel": "medium",
+  "category": "Community",
+  "summary": "Messy, human-authored discussion that AI labs pay to train on — and can also imitate.",
+  "moat": "Reddit's moat is a vast archive of authentic human conversation organized by community, exactly the kind of opinionated, experiential data that models struggle to synthesize. That value has become a licensing business, but it also incentivizes AI answers that paraphrase Reddit threads without sending readers back, pressuring the engagement loop that produces the content in the first place.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Google (AI training license)",
+      "evidence": "Reddit signed a data-licensing deal reported at ~$60M/year to train Google's AI models, confirming the corpus's value.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Reddit S-1 registration statement (2024)", "url": "https://www.sec.gov/Archives/edgar/data/1713445/000162828024006294/reddits-1.htm" },
+    { "id": "s2", "label": "Reuters — Reddit AI content licensing deal with Google", "url": "https://www.reuters.com/technology/reddit-ai-content-licensing-deal-with-google-sources-say-2024-02-22/" }
+  ]
+}

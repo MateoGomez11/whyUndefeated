@@ -1,0 +1,28 @@
+<!-- @dsCard group="WhyUndefeated" viewport="1280x900" name="Tracker (Homepage + Detail)" -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WhyUndefeated</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="../../preview-runtime.js"></script>
+<script src="data.js"></script>
+<script src="image-slot.js"></script>
+<script src="screens-runtime.js"></script>
+</head>
+<body style="margin:0">
+<div id="root"></div>
+<script>
+function App() {
+  var h = React.createElement;
+  var state = React.useState(null), selected = state[0], setSelected = state[1];
+  return selected
+    ? h(window.AppDetail, { app: selected, onBack: function () { setSelected(null); } })
+    : h(window.Homepage, { onSelect: setSelected });
+}
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+</script>
+</body>
+</html>

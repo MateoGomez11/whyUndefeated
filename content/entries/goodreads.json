@@ -1,0 +1,20 @@
+{
+  "slug": "goodreads",
+  "appName": "Goodreads",
+  "threatLevel": "medium",
+  "category": "Community",
+  "summary": "The default book graph — protected more by inertia than by product quality.",
+  "moat": "Goodreads' moat is a large social graph of readers, shelves, and a deep back-catalog of user reviews owned by Amazon, plus integration with the dominant bookseller. Its exposure is a widely criticized, stagnant product and a younger audience migrating to newer reading communities where AI recommendation could erode the discovery advantage.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "The StoryGraph",
+      "evidence": "The StoryGraph grew to millions of readers by 2024, positioning algorithmic mood/pace recommendations against Goodreads.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "About Goodreads (company page)", "url": "https://www.goodreads.com/about/us" },
+    { "id": "s2", "label": "The StoryGraph — about page", "url": "https://www.thestorygraph.com/about" }
+  ]
+}

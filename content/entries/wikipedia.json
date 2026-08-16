@@ -1,0 +1,27 @@
+{
+  "slug": "wikipedia",
+  "appName": "Wikipedia",
+  "threatLevel": "high",
+  "category": "Knowledge",
+  "summary": "The web's reference layer — now both training data for AI and the target it summarizes away.",
+  "moat": "Wikipedia's moat is a two-decade corpus of human-verified, citation-backed articles maintained by a volunteer community and strict sourcing policies. That same openness is its exposure: large language models train on Wikipedia and increasingly answer factual questions directly, which can divert the reader traffic and new-editor pipeline the encyclopedia depends on to stay current.",
+  "moatSourceIds": ["s1", "s2"],
+  "challengers": [
+    {
+      "name": "ChatGPT / conversational answer engines",
+      "evidence": "OpenAI reported ChatGPT reached ~800M weekly active users in 2025, intercepting factual lookups before they reach Wikipedia.",
+      "sourceId": "s3"
+    },
+    {
+      "name": "Google AI Overviews",
+      "evidence": "Google rolled AI Overviews out to 200+ countries in 2025, surfacing synthesized answers above traditional reference links.",
+      "sourceId": "s4"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Wikipedia:Verifiability policy", "url": "https://en.wikipedia.org/wiki/Wikipedia:Verifiability" },
+    { "id": "s2", "label": "Wikimedia Foundation — 2024 annual report", "url": "https://wikimediafoundation.org/about/2024-annual-report/" },
+    { "id": "s3", "label": "OpenAI DevDay 2025 announcements", "url": "https://openai.com/index/devday-2025/" },
+    { "id": "s4", "label": "Google — AI Overviews expansion", "url": "https://blog.google/products/search/ai-overviews-expansion/" }
+  ]
+}

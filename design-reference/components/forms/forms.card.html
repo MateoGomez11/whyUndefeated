@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" viewport="700x260" name="Forms (FilterPill, SearchInput)" -->
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="../../preview-runtime.js"></script>
+</head>
+<body style="margin:0;background:var(--bg-0);padding:24px;font-family:var(--font-sans)">
+<div id="root"></div>
+<script>
+var h = React.createElement;
+var FilterPill = DS.FilterPill, SearchInput = DS.SearchInput;
+function Demo() {
+  var state = React.useState('high'), tier = state[0], setTier = state[1];
+  return h('div', {style:{display:'flex',flexDirection:'column',gap:20}},
+    h(SearchInput, {placeholder:'Search tracked apps…'}),
+    h('div', {style:{display:'flex',gap:8}},
+      ['high','medium','low'].map(function(t){
+        return h(FilterPill, {key:t, active: tier===t, onClick: function(){ setTier(t); }}, t);
+      })
+    )
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>
