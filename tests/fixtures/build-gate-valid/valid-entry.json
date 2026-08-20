@@ -1,0 +1,14 @@
+{
+  "slug": "valid-entry",
+  "appName": "Fixture Valid App",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "A fully valid fixture entry used to prove the build gate passes clean content.",
+  "moat": "Placeholder moat explanation for the fixture.",
+  "moatSourceIds": ["s1"],
+  "challengers": [{ "name": "Fixture Challenger", "evidence": "Some evidence.", "sourceId": "s2" }],
+  "sources": [
+    { "id": "s1", "label": "Fixture source one", "url": "https://example.com/fixture-1" },
+    { "id": "s2", "label": "Fixture source two", "url": "https://example.com/fixture-2" }
+  ]
+}

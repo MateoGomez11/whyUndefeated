@@ -1,35 +1,5 @@
 import type { ThreatCounts } from '@/lib/content/tally';
-import type { ThreatLevel } from '@/lib/content/schema';
-
-const TIERS: {
-  level: ThreatLevel;
-  label: string;
-  caption: string;
-  color: string;
-  glow: string;
-}[] = [
-  {
-    level: 'high',
-    label: 'High Threat',
-    caption: 'Named challengers are actively eroding the moat',
-    color: 'var(--threat-high)',
-    glow: 'var(--threat-high-glow)',
-  },
-  {
-    level: 'medium',
-    label: 'Medium Threat',
-    caption: 'Credible pressure exists, but the moat still holds',
-    color: 'var(--threat-medium)',
-    glow: 'var(--threat-medium-glow)',
-  },
-  {
-    level: 'low',
-    label: 'Low Threat / Safe',
-    caption: 'The moat is durable — no near-term path to replacement',
-    color: 'var(--threat-low)',
-    glow: 'var(--threat-low-glow)',
-  },
-];
+import { TIERS } from '@/lib/content/tiers';
 
 /**
  * Homepage tier stat blocks (design-reference TierBlock style): a big number per
@@ -43,6 +13,7 @@ export function TierStats({ counts }: { counts: ThreatCounts }) {
   return (
     <section
       aria-label="Threat level legend"
+      className="tier-stats"
       style={{
         display: 'flex',
         justifyContent: 'center',
@@ -54,6 +25,7 @@ export function TierStats({ counts }: { counts: ThreatCounts }) {
       {TIERS.map((t) => (
         <div
           key={t.level}
+          className="tier-stat-block"
           style={{
             display: 'flex',
             flexDirection: 'column',
@@ -74,11 +46,12 @@ export function TierStats({ counts }: { counts: ThreatCounts }) {
                 flexShrink: 0,
               }}
             />
-            <span className="ds-label" style={{ color: 'var(--fg-tertiary)' }}>
+            <span className="ds-label tier-stat-label" style={{ color: 'var(--fg-tertiary)' }}>
               {t.label}
             </span>
           </div>
           <div
+            className="tier-stat-number"
             style={{
               fontFamily: 'var(--font-mono), monospace',
               fontWeight: 700,
@@ -90,6 +63,7 @@ export function TierStats({ counts }: { counts: ThreatCounts }) {
             {counts[t.level]}
           </div>
           <p
+            className="tier-stat-caption-full"
             style={{
               margin: 0,
               fontSize: 12,
@@ -99,6 +73,17 @@ export function TierStats({ counts }: { counts: ThreatCounts }) {
             }}
           >
             {t.caption}
+          </p>
+          <p
+            className="tier-stat-caption-short"
+            style={{
+              margin: 0,
+              fontSize: 11,
+              lineHeight: 1.3,
+              color: 'var(--fg-tertiary)',
+            }}
+          >
+            {t.shortCaption}
           </p>
         </div>
       ))}

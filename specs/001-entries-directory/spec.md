@@ -197,6 +197,23 @@ obligatorio y verificando que la publicación se detiene con un mensaje que iden
   entradas; (c) total de votos de la comunidad = 0 hasta que exista la feature de votación. Estos totales
   MUST ser derivados de los datos; NUNCA un valor inventado, editorial ni un puntaje compuesto.
 
+### Non-Functional Requirements
+
+**Breakpoints**: móvil `<640px` · tablet `640–1024px` · desktop `>1024px`.
+
+- **NFR-001**: El sitio MUST ser completamente usable y legible en los tres breakpoints (móvil, tablet,
+  desktop), incluyendo con JavaScript desactivado (ver Principio III de la constitución y FR-011).
+- **NFR-002**: La tabla de tracker de la home MUST colapsar a un layout de tarjetas apiladas en móvil, sin
+  scroll horizontal ni desbordamiento de columnas.
+- **NFR-003**: El hero (titular, barra de búsqueda y stat blocks) MUST redimensionarse/apilarse
+  verticalmente en móvil sin romper el patrón de titular fijo a dos líneas.
+- **NFR-004**: La navegación del header MUST colapsar a un layout compacto apto para móvil. Se prefiere una
+  solución puramente CSS (p. ej. toggle basado en checkbox/`<details>`) sobre un componente cliente, para
+  preservar el principio de que el sitio no requiere JavaScript (Principio III).
+- **NFR-005**: El layout de dos columnas de la página de detalle (contenido principal + sidebar de
+  "related apps") MUST apilarse a una sola columna en móvil, con "related apps" apareciendo debajo del
+  contenido principal en lugar de al lado.
+
 ### Key Entities *(include if feature involves data)*
 
 - **Entrada (Entry)**: Representa una app/plataforma evaluada. Atributos: nombre de la app, slug (derivado
@@ -232,6 +249,9 @@ obligatorio y verificando que la publicación se detiene con un mensaje que iden
   total de votos = 0 (verificable de forma automatizada).
 - **SC-009**: El 100% de las entradas tienen una categoría válida del enum, y cada sección de "related
   apps" lista únicamente entradas que comparten esa categoría.
+- **SC-010**: En los tres breakpoints (móvil `<640px`, tablet `640–1024px`, desktop `>1024px`), la home y
+  las páginas de detalle renderizan sin scroll horizontal ni desbordamiento de columnas, y permanecen
+  legibles y navegables con JavaScript desactivado (NFR-001–NFR-005).
 
 ## Assumptions
 

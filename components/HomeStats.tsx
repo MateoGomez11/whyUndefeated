@@ -10,7 +10,11 @@ function TickerItem({ value, label }: { value: number; label: string }) {
 }
 
 function Dot() {
-  return <span style={{ color: 'var(--border-strong)' }}>·</span>;
+  return (
+    <span className="home-stats-dot" style={{ color: 'var(--border-strong)' }}>
+      ·
+    </span>
+  );
 }
 
 /**
@@ -22,6 +26,7 @@ function Dot() {
 export function HomeStats({ tally }: { tally: Tally }) {
   return (
     <div
+      className="home-stats"
       style={{
         display: 'flex',
         justifyContent: 'center',

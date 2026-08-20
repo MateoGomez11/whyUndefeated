@@ -1,0 +1,11 @@
+{
+  "slug": "challenger-without-source",
+  "appName": "Fixture App",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "A fixture entry whose challenger has no source citation at all.",
+  "moat": "Placeholder moat explanation for the fixture.",
+  "moatSourceIds": ["s1"],
+  "challengers": [{ "name": "Unsourced Challenger", "evidence": "Unverifiable claim." }],
+  "sources": [{ "id": "s1", "label": "Fixture source", "url": "https://example.com/fixture" }]
+}

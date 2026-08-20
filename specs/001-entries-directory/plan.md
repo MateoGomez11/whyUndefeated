@@ -34,10 +34,13 @@ degradación grácil sin JS
 **Project Type**: Aplicación web (Next.js App Router, single project)
 
 **Performance Goals**: Lighthouse Performance ≥ 90 en páginas de contenido; LCP < 2.5 s y CLS < 0.1 en
-móvil emulado; JS de cliente ≤ 30 KB gzip por página de contenido (0 en esta feature al no haber islas)
+móvil emulado; JS de cliente ~110 KB gzip por página, aceptado como baseline de framework (0 propio de
+esta feature al no haber islas) — ver research.md Decisión 6, actualizada 2026-08-17 tras medición real
 
 **Constraints**: Contenido principal 100% renderizado en servidor (SSG); sin fetching cliente para
-mostrar contenido; páginas legibles con JavaScript desactivado; sin secretos en el repo; sin PII
+mostrar contenido; páginas legibles con JavaScript desactivado; sin secretos en el repo; sin PII;
+responsive en tres breakpoints (móvil `<640px`, tablet `640–1024px`, desktop `>1024px`, NFR-001–NFR-005)
+manteniéndose legible sin JS en los tres
 
 **Scale/Scope**: 7 entradas semilla; 1 ruta de listado + 1 ruta dinámica de detalle + not-found; ~8
 componentes de presentación + ~6 módulos de librería de contenido (incluye `tally` para el contador
@@ -158,6 +161,28 @@ Link de regreso mono 13 `--brand-400` ("← back to tracker"). Fila de cabecera 
 - Cuerpo: grid `1fr 320px` — principal (evidencia/fuentes) + sidebar "Related apps" (cards con nombre +
   `ThreatBadge sm`), que mapea a la sección de FR-020.
 
+### Responsive / Breakpoints (NFR-001–NFR-005)
+
+**Breakpoints**: móvil `<640px` · tablet `640–1024px` · desktop `>1024px`. El `design-reference/` no define
+ninguna media query — todos sus layouts son de ancho fijo/desktop; el colapso responsive documentado aquí
+es enteramente nuevo en esta feature, no portado de la referencia.
+
+- **Tabla de tracker (home)**: en `<640px` la grid `2fr 1fr 2.6fr 1.2fr` (ver "Estilo de filas de la
+  tabla") colapsa a tarjetas apiladas — una por entrada, en columna: logo+nombre arriba, luego `Badge` de
+  categoría, resumen y `ThreatBadge`. Sin scroll horizontal ni columnas desbordadas (NFR-002).
+- **Hero**: el titular fijo a dos líneas ya usa `clamp(32px, 5vw, 64px)` (ver "Patrón de hero"), así que
+  reduce tamaño de forma fluida sin romper el patrón de dos líneas. La barra de búsqueda y el ticker/stat
+  blocks pasan de fila a columna en `<640px` (`flex-direction: column`) (NFR-003).
+- **Header nav**: en `<1024px` los links colapsan detrás de un toggle compacto. Implementación preferida:
+  **puro CSS** (`<input type="checkbox">` oculto + `label` visible como botón + selector
+  `:checked ~ .nav-links { display: flex }`, o `<details>/<summary>` nativo) en vez de un componente
+  cliente — preserva el Principio III: sin JS, los links de navegación siguen presentes/navegables en el
+  HTML, solo se pierde la animación de colapso (NFR-004).
+- **Detalle**: la grid `1fr 320px` (contenido + sidebar "Related apps") colapsa a una columna
+  (`grid-template-columns: 1fr`) en `<640px`. "Related apps" se posiciona **después** del contenido
+  principal en el orden natural del DOM (no vía `order` de flex/grid), para que la lectura sin CSS/JS
+  también siga el orden lógico correcto (NFR-005).
+
 ### Resumen de desviaciones respecto a `design-reference/`
 
 1. Sin "Confidence %" en detalle (puntaje de confianza rechazado — Principio I).
@@ -168,6 +193,8 @@ Link de regreso mono 13 `--brand-400` ("← back to tracker"). Fila de cabecera 
    estático.
 5. Fuentes vía `next/font`, no `@import` de Google Fonts en runtime.
 6. Animaciones (count-up, glow, cursor) son mejora progresiva; el contenido y los números son legibles sin JS.
+7. Breakpoints y colapso responsive (móvil/tablet/desktop, NFR-001–NFR-005): el `design-reference/` es
+   desktop-only y no define ninguno — ver "Responsive / Breakpoints" arriba.
 
 ## Project Structure
 

@@ -45,5 +45,5 @@ fetching de datos del lado del cliente para el contenido, y legibles con JavaScr
 | Lighthouse Performance | ≥ 90 | research Decisión 6 / SC-007 |
 | LCP (móvil emulado) | < 2.5 s | research Decisión 6 |
 | CLS | < 0.1 | research Decisión 6 |
-| JS de cliente por página | ≤ 30 KB gzip (0 en esta feature) | research Decisión 6 |
+| JS de cliente por página | ~110 KB gzip, aceptado como baseline de framework (0 propio de esta feature) | research Decisión 6 (actualizada 2026-08-17) |
 | Indexable / legible sin JS | Sí | FR-011, SC-005, SC-007 |

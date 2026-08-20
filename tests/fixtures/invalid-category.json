@@ -1,0 +1,11 @@
+{
+  "slug": "invalid-category",
+  "appName": "Fixture App",
+  "threatLevel": "medium",
+  "category": "Nonsense",
+  "summary": "A fixture entry with a category outside the allowed enum.",
+  "moat": "Placeholder moat explanation for the fixture.",
+  "moatSourceIds": ["s1"],
+  "challengers": [],
+  "sources": [{ "id": "s1", "label": "Fixture source", "url": "https://example.com/fixture" }]
+}

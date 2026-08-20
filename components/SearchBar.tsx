@@ -8,6 +8,7 @@
 export function SearchBar() {
   return (
     <div
+      className="search-bar"
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -34,8 +35,10 @@ export function SearchBar() {
         type="search"
         placeholder="search a platform…"
         aria-label="Search platforms"
+        className="search-bar-input"
         style={{
           flex: 1,
+          minWidth: 0,
           background: 'transparent',
           border: 'none',
           outline: 'none',

@@ -14,7 +14,7 @@
   /* Foreground */
   --fg-primary: #f1f1f6;
   --fg-secondary: #a3a1b8;
-  --fg-tertiary: #6d6b85;
+  --fg-tertiary: #8583ab; /* deviation from design-reference #6d6b85: bumped for WCAG AA contrast (4.5:1) on --bg-0/1/2 */
   --fg-disabled: #4a4860;
 
   /* Brand accent: electric violet (the ONE decorative accent) */
@@ -192,5 +192,160 @@ a:hover {
   .ds-cursor::after,
   .ds-fade-in {
     animation: none;
+  }
+}
+
+/* ==========================================================================
+   Responsive layout (NFR-001–NFR-005)
+   Breakpoints: mobile <640px · tablet 640–1024px · desktop >1024px.
+   All rules below are pure CSS — no JS required to reach any layout state
+   (Principle III / NFR-001). design-reference/ has no media queries; every
+   rule here is new to this feature (see plan.md "Responsive / Breakpoints").
+   ========================================================================== */
+
+/* --- Tracker table -> stacked cards on mobile (NFR-002) --- */
+.tracker-header,
+.entry-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2.6fr 1.2fr;
+}
+
+@media (max-width: 639px) {
+  /* Column headers don't apply to a stacked-card layout. */
+  .tracker-header {
+    display: none;
+  }
+  .entry-card {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-2);
+    align-items: start !important;
+  }
+}
+
+/* --- Hero: search bar + stat blocks resize on mobile (NFR-003) ---
+   The two-line headline itself already scales fluidly via clamp() in
+   HeroHeadline.tsx (see plan.md "Patrón de hero") and needs no layout change. */
+
+/* Short caption is a mobile-only stand-in for the full sentence — hidden by
+   default (tablet/desktop keep the full caption); see the <640px block below. */
+.tier-stat-caption-short {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  /* Tier blocks stay in a single horizontal row of 3 (not stacked) — just
+     much more compact, so all three fit at 375px without horizontal scroll. */
+  .tier-stats {
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    gap: var(--space-2) !important;
+  }
+  .tier-stat-block {
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 4px !important;
+    padding-left: 10px !important;
+  }
+  .tier-stat-label {
+    font-size: 9px !important;
+  }
+  .tier-stat-number {
+    font-size: 32px !important;
+  }
+  .tier-stat-caption-full {
+    display: none;
+  }
+  .tier-stat-caption-short {
+    display: block;
+    font-size: 10px !important;
+    white-space: normal;
+  }
+  .home-stats {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .home-stats-dot {
+    display: none;
+  }
+  .search-bar {
+    padding: 14px 16px !important;
+    gap: 10px !important;
+  }
+  .search-bar-input {
+    font-size: var(--text-body) !important;
+  }
+}
+
+/* --- Header nav: CSS-only collapse, no client component (NFR-004) ---
+   Checkbox is visually hidden (not display:none) so it stays keyboard-
+   focusable/tabbable; the label acts as the visible toggle button. Without
+   JS the checkbox still works via native click/keyboard — no script needed. */
+.nav-toggle-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.nav-toggle-label {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+  .nav-toggle-label {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    border-radius: var(--radius-xs);
+  }
+  .nav-toggle-bar {
+    display: block;
+    height: 2px;
+    background: var(--fg-primary);
+    border-radius: 1px;
+  }
+  .nav-toggle-checkbox:focus-visible ~ .nav-toggle-label {
+    outline: 2px solid var(--brand-400);
+    outline-offset: 3px;
+  }
+  .nav-links {
+    display: none !important;
+    flex-basis: 100%;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: var(--space-3) !important;
+    padding-top: var(--space-4);
+  }
+  .nav-toggle-checkbox:checked ~ .nav-links {
+    display: flex !important;
+  }
+}
+
+/* --- Detail page: two-column layout -> single column (NFR-005) ---
+   Collapses at the tablet breakpoint too (not just mobile): a fixed 320px
+   sidebar leaves too little room for the main content column on narrow
+   tablet widths to stay legible (NFR-001). "Related apps" already sits
+   after the main content in DOM order (EntryDetail.tsx), so collapsing to
+   one column naturally places it below — no `order` property needed. */
+.entry-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+}
+
+@media (max-width: 1023px) {
+  .entry-detail-grid {
+    grid-template-columns: 1fr;
   }
 }

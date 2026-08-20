@@ -15,8 +15,6 @@ export function EntryCard({ entry }: { entry: Entry }) {
       href={`/entries/${entry.slug}`}
       className="entry-card"
       style={{
-        display: 'grid',
-        gridTemplateColumns: '2fr 1fr 2.6fr 1.2fr',
         alignItems: 'center',
         gap: 'var(--space-4)',
         padding: 'var(--space-4) var(--space-5)',

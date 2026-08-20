@@ -46,10 +46,8 @@ export default function HomePage() {
         style={{ border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}
       >
         <div
-          className="ds-label"
+          className="ds-label tracker-header"
           style={{
-            display: 'grid',
-            gridTemplateColumns: '2fr 1fr 2.6fr 1.2fr',
             gap: 'var(--space-4)',
             padding: '10px var(--space-5)',
             background: 'var(--bg-1)',

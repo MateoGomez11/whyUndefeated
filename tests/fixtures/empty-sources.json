@@ -1,0 +1,11 @@
+{
+  "slug": "empty-sources",
+  "appName": "Fixture App",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "A fixture entry with an empty sources array.",
+  "moat": "Placeholder moat explanation for the fixture.",
+  "moatSourceIds": ["s1"],
+  "challengers": [],
+  "sources": []
+}

@@ -111,19 +111,19 @@ clickeable; abrir un slug inexistente → not-found; legible sin JS.
 
 ### Tests for User Story 2 (TDD — escribir primero, deben fallar)
 
-- [ ] T035 [P] [US2] Prueba unitaria en `tests/unit/related.test.ts`: "related apps" = otras entradas de la misma `category`, excluye la propia, y omite si es única de su categoría (FR-020, SC-009)
-- [ ] T036 [P] [US2] E2E en `e2e/detail.spec.ts`: campos completos, cada retador con enlace de fuente, moat con cita clickeable, sección de fuentes deduplicada, related apps, slug inexistente → not-found (US2 esc. 1–5, FR-006/07/08/15)
-- [ ] T037 [P] [US2] E2E sin JS en `e2e/no-js.spec.ts` (parte detalle): contenido, related apps y enlaces de fuentes legibles/clickeables con `javaScriptEnabled:false` (US2 esc. 6, FR-011)
+- [X] T035 [P] [US2] Prueba unitaria en `tests/unit/related.test.ts`: "related apps" = otras entradas de la misma `category`, excluye la propia, y omite si es única de su categoría (FR-020, SC-009)
+- [X] T036 [P] [US2] E2E en `e2e/detail.spec.ts`: campos completos, cada retador con enlace de fuente, moat con cita clickeable, sección de fuentes deduplicada, related apps, slug inexistente → not-found (US2 esc. 1–5, FR-006/07/08/15)
+- [X] T037 [P] [US2] E2E sin JS en `e2e/no-js.spec.ts` (parte detalle): contenido, related apps y enlaces de fuentes legibles/clickeables con `javaScriptEnabled:false` (US2 esc. 6, FR-011)
 
 ### Implementation for User Story 2
 
-- [ ] T038 [US2] Implementar `lib/content/related.ts` (related apps por categoría) — hace pasar T035 (FR-020)
-- [ ] T039 [P] [US2] Componente `components/ChallengerList.tsx` (nombre, evidencia de una línea, enlace de fuente) — FR-006; maneja lista vacía (FR-018)
-- [ ] T040 [P] [US2] Componente `components/SourcesList.tsx` (fuentes deduplicadas, clickeables) — FR-008
-- [ ] T041 [P] [US2] Componente `components/RelatedApps.tsx` (cards de misma categoría; omite si vacío) — FR-020
-- [ ] T042 [US2] Componente `components/EntryDetail.tsx`: PLANTILLA COMPARTIDA que compone header (Badge categoría + logo placeholder, SIN "Updated", SIN "Confidence"), nombre h1, ThreatBadge, moat con citas, ChallengerList, SourcesList, RelatedApps — FR-009 + desviaciones del design-reference
-- [ ] T043 [US2] Página `app/entries/[slug]/page.tsx` (RSC/SSG) con `generateStaticParams()` (7 slugs) y `dynamicParams = false`; usa EntryDetail — FR-005/FR-011
-- [ ] T044 [US2] Página `app/not-found.tsx` legible (404) para slug inexistente — FR-015
+- [X] T038 [US2] Implementar `lib/content/related.ts` (related apps por categoría) — hace pasar T035 (FR-020)
+- [X] T039 [P] [US2] Componente `components/ChallengerList.tsx` (nombre, evidencia de una línea, enlace de fuente) — FR-006; maneja lista vacía (FR-018)
+- [X] T040 [P] [US2] Componente `components/SourcesList.tsx` (fuentes deduplicadas, clickeables) — FR-008
+- [X] T041 [P] [US2] Componente `components/RelatedApps.tsx` (cards de misma categoría; omite si vacío) — FR-020
+- [X] T042 [US2] Componente `components/EntryDetail.tsx`: PLANTILLA COMPARTIDA que compone header (Badge categoría + logo placeholder, SIN "Updated", SIN "Confidence"), nombre h1, ThreatBadge, moat con citas, ChallengerList, SourcesList, RelatedApps — FR-009 + desviaciones del design-reference
+- [X] T043 [US2] Página `app/entries/[slug]/page.tsx` (RSC/SSG) con `generateStaticParams()` (7 slugs) y `dynamicParams = false`; usa EntryDetail — FR-005/FR-011
+- [X] T044 [US2] Página `app/not-found.tsx` legible (404) para slug inexistente — FR-015
 
 **Checkpoint**: US1 y US2 funcionan de forma independiente
 
@@ -139,14 +139,14 @@ campo + archivo.
 
 ### Tests for User Story 3 (TDD — escribir primero, deben fallar)
 
-- [ ] T045 [P] [US3] Crear fixtures inválidas en `tests/fixtures/` (falta threatLevel; falta moat; `sources: []`; category fuera de enum; `sourceId` colgante; retador sin fuente)
-- [ ] T046 [P] [US3] Prueba de integración en `tests/integration/loader.invalid.test.ts`: por cada fixture, el loader lanza y el mensaje nombra el campo y el archivo (FR-013, SC-004; contrato V1–V8/V1b)
+- [X] T045 [P] [US3] Crear fixtures inválidas en `tests/fixtures/` (falta threatLevel; falta moat; `sources: []`; category fuera de enum; `sourceId` colgante; retador sin fuente)
+- [X] T046 [P] [US3] Prueba de integración en `tests/integration/loader.invalid.test.ts`: por cada fixture, el loader lanza y el mensaje nombra el campo y el archivo (FR-013, SC-004; contrato V1–V8/V1b)
 
 ### Implementation for User Story 3
 
-- [ ] T047 [US3] Ajustar el formato de error del loader `lib/content/loader.ts` a `{archivo, campo, motivo}` legible y consistente con el contrato — hace pasar T046
-- [ ] T048 [US3] Garantizar que la validación corre en build: `generateStaticParams`/carga de `app/page.tsx` invoca el loader de modo que `next build` falle ante contenido inválido; documentar en `package.json` (script build) — SC-004
-- [ ] T049 [US3] Prueba de integración en `tests/integration/loader.build-gate.test.ts`: una entrada válida completa el build sin errores; una inválida lo detiene (US3 esc. 1–4)
+- [X] T047 [US3] Ajustar el formato de error del loader `lib/content/loader.ts` a `{archivo, campo, motivo}` legible y consistente con el contrato — hace pasar T046
+- [X] T048 [US3] Garantizar que la validación corre en build: `generateStaticParams`/carga de `app/page.tsx` invoca el loader de modo que `next build` falle ante contenido inválido; documentar en `package.json` (script build) — SC-004
+- [X] T049 [US3] Prueba de integración en `tests/integration/loader.build-gate.test.ts`: una entrada válida completa el build sin errores; una inválida lo detiene (US3 esc. 1–4)
 
 **Checkpoint**: Las 3 historias funcionan de forma independiente
 
@@ -156,13 +156,86 @@ campo + archivo.
 
 **Purpose**: Calidad transversal y verificación final
 
-- [ ] T050 [P] Verificar presupuesto de rendimiento con Lighthouse en `/` y `/entries/pinterest` (Performance ≥90, LCP <2.5s, CLS <0.1, JS ≤30KB) — SC-007
-- [ ] T051 [P] Verificar accesibilidad del badge (nivel por color + texto, no solo color) y navegación por teclado — FR-017
-- [ ] T052 [P] Spot-check visual de `components/` contra `design-reference/` (tokens, tabla, hero de dos líneas, header de detalle sin "Updated"/"Confidence")
-- [ ] T053 Confirmar que `design-reference/` no entra al output de build de producción (`.vercelignore` + sin imports) — plan.md
-- [ ] T054 Ejecutar la validación de `quickstart.md` de punta a punta (escenarios 1–7)
-- [ ] T055 [P] Escribir `README.md` (cómo correr dev/build/tests; formato de `content/entries/*.json`)
-- [ ] T056 Limpieza/refactor y confirmación de que NO existe ningún "confidence score" en código ni UI (Principio I)
+- [X] T050 [P] Verificar presupuesto de rendimiento con Lighthouse en `/` y `/entries/pinterest` (Performance ≥90, LCP <2.5s, CLS <0.1, JS ≤30KB) — SC-007
+- [X] T051 [P] Verificar accesibilidad del badge (nivel por color + texto, no solo color) y navegación por teclado — FR-017
+- [X] T052 [P] Spot-check visual de `components/` contra `design-reference/` (tokens, tabla, hero de dos líneas, header de detalle sin "Updated"/"Confidence")
+- [X] T053 Confirmar que `design-reference/` no entra al output de build de producción (`.vercelignore` + sin imports) — plan.md
+- [X] T054 Ejecutar la validación de `quickstart.md` de punta a punta (escenarios 1–7)
+- [X] T055 [P] Escribir `README.md` (cómo correr dev/build/tests; formato de `content/entries/*.json`)
+- [X] T056 Limpieza/refactor y confirmación de que NO existe ningún "confidence score" en código ni UI (Principio I)
+
+### Resultados de verificación (Fase 6, medidos)
+
+- **Lighthouse desktop** en `/` y `/entries/pinterest`: Performance 100/100, Accessibility 100/100 (tras
+  fix de contraste, ver abajo), LCP ~0.5–0.6s, CLS ~0–0.012. Todos dentro del presupuesto (≥90 / <2.5s / <0.1).
+- **Fix aplicado**: `--fg-tertiary` en `app/globals.css` se subió de `#6d6b85` a `#8583ab` — el valor
+  portado del design-reference no cumplía el contraste WCAG AA (4.5:1) sobre `--bg-0/1/2` (medía ~3.7–3.85:1
+  en captions/labels mono). Deviación documentada inline en el CSS.
+- **✅ Resuelto (2026-08-17)**: el presupuesto de JS de cliente en `research.md` Decisión 6 se actualizó de
+  "≤30KB gzip" a "~110KB gzip, aceptado como baseline del framework de Next.js App Router" — se miden
+  ~107KB gzip transferidos (runtime de React/hidratación de Server Components, sin JS propio de la
+  feature; no hay islas interactivas). Es inherente a la estrategia de renderizado (RSC + hidratación), no
+  un costo de la feature, y no vale la pena pelearlo cambiando de framework/estrategia. Las señales de
+  rendimiento que importan siguen siendo Lighthouse Performance (100/100 medido) y Core Web Vitals
+  (LCP, CLS), no el conteo crudo de bytes de JS.
+
+---
+
+## Phase 7: Responsive Design (NFR-001–NFR-005, SC-010)
+
+**Purpose**: Implementar el requisito no-funcional de responsive añadido a `spec.md`/`plan.md` después de
+la Fase 6. Breakpoints: móvil `<640px` · tablet `640–1024px` · desktop `>1024px`.
+
+- [X] T057 [P] Portar el colapso de la tabla de tracker a tarjetas apiladas en móvil (NFR-002): clases
+  `.tracker-header`/`.entry-card` en `app/globals.css` (grid `2fr 1fr 2.6fr 1.2fr` en tablet/desktop, `1fr`
+  y cabecera oculta en `<640px`); `app/page.tsx` y `components/EntryCard.tsx` ceden el `gridTemplateColumns`
+  inline a la clase CSS.
+- [X] T058 [P] Responsive de hero/search/stat blocks (NFR-003): `.tier-stats` pasa a columna en `<640px`
+  (`components/TierStats.tsx`); `.home-stats` pasa a columna y oculta los separadores `·`
+  (`components/HomeStats.tsx`); `.search-bar`/`.search-bar-input` reducen padding/tamaño
+  (`components/SearchBar.tsx`). El titular de dos líneas no se tocó — ya escala vía `clamp()`.
+- [X] T059 [P] Nav colapsable CSS-only, sin `"use client"` (NFR-004): checkbox oculto (visualmente, no
+  `display:none`, para mantenerlo tabbable) + `<label>` con ícono hamburguesa dibujado en CSS +
+  `:checked ~ .nav-links` en `app/globals.css`; marcado en `components/NavBar.tsx`. Colapsa en `<1024px`.
+- [X] T060 [P] Grid de detalle a una columna en `<1024px` con "Related apps" después del contenido
+  (NFR-005): clase `.entry-detail-grid` en `app/globals.css`; `components/EntryDetail.tsx` cede el
+  `gridTemplateColumns` inline a la clase. El orden ya era correcto en el DOM (sin `order`), así que el
+  colapso a una columna basta.
+- [X] T061 [P] Tests e2e con viewports emulados en `e2e/responsive.spec.ts` (mobile/tablet/desktop × home
+  + detalle): sin scroll horizontal (SC-010), colapso de tabla/nav/grid en cada breakpoint, toggle del nav
+  funciona con click y con teclado.
+- [X] T062 [P] Cobertura del toggle de nav y de la tabla apilada bajo el proyecto `no-js` a viewport móvil
+  en `e2e/no-js.spec.ts`, probando que NFR-004 funciona sin JavaScript real (no solo en teoría).
+- [X] T063 Ajuste post-implementación a NFR-003: los 3 tier blocks (High/Medium/Low) ya NO se apilan en
+  columna en `<640px` — se mantienen en **una fila horizontal compacta**, más angosta que legible en
+  columna. Cambios: número grande `72px → 32px` (`.tier-stat-number`), label reducido a `9px`
+  (`.tier-stat-label`), caption completa oculta y reemplazada por una versión corta de una línea
+  (`.tier-stat-caption-full` / `.tier-stat-caption-short`, nuevo campo `shortCaption` en
+  `components/TierStats.tsx`: "Eroding the moat" / "Moat still holds" / "Moat is durable" — la explicación
+  completa sigue en el DOM, oculta, y la leyenda/región accesible conserva el texto íntegro para lectores
+  de pantalla vía el `aria-label` de la sección). Acento de color (borde 3px) y label completo
+  ("High Threat", etc.) se mantienen visibles, solo más pequeños. Verificado sin overflow horizontal en
+  375px (`tier-stats` box: 327px de ancho, ~85px de alto — antes ocupaba varias veces esa altura apilado
+  en columna). Test actualizado en `e2e/responsive.spec.ts` (antes verificaba `flex-direction: column`,
+  ahora verifica fila de 3 bloques en el mismo `top`, número `<40px`, caption corta visible).
+
+**Bugs encontrados y corregidos durante la implementación**:
+- Los captions de `TierStats` usaban `white-space: nowrap`, lo que causaba overflow horizontal real en
+  home a 375px al apilar los tier blocks a columna completa en el primer intento — resuelto de raíz por
+  T063 (la caption larga con `nowrap` ya ni se renderiza en mobile, se reemplaza por la corta).
+- El primer intento del toggle de nav puso `aria-hidden="true"` en el checkbox (rompe accesibilidad: un
+  elemento focuseable no puede estar `aria-hidden`) y `aria-label` en el `<label>` (inválido sin `role`).
+  Corregido: `aria-label` se movió al `<input>`, `aria-hidden="true"` se movió a las barras decorativas del
+  ícono. Verificado con Lighthouse: Accessibility volvió a 100/100 en home/detalle desktop y home mobile-
+  emulado (antes del fix había bajado a 95/91).
+
+**Resultados de verificación (medidos, build de producción)**:
+- Capturas de pantalla en 375px/768px/1280px para home y detalle confirmaron visualmente: tabla → tarjetas
+  en móvil, tier stats en columna, nav → hamburguesa funcional (verificado con click real de Playwright),
+  grid de detalle → una columna con "Related apps" debajo del contenido (no al lado).
+- 46/46 Jest + 37/37 Playwright (chromium + no-js) en verde tras la implementación.
+- Lighthouse post-implementación: Performance 100/100 (desktop) y 97/100 (mobile-emulado) en home y
+  detalle; Accessibility 100/100 en los tres. Sin regresión respecto a la Fase 6.
 
 ---
 

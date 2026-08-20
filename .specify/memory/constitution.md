@@ -1,29 +1,25 @@
 <!--
 INFORME DE IMPACTO DE SINCRONIZACIÓN
 ====================================
-Cambio de versión: 1.0.0 → 1.1.0
-Justificación: Se añade un nuevo principio (VI. Requisitos de Seguridad),
-lo que constituye un incremento MENOR según versionado semántico.
+Cambio de versión: 1.1.0 → 1.2.0
+Justificación: Se añade una nueva sección ("Roadmap Futuro (no implementado)") documentando 3 ideas
+evaluadas y diferidas más allá del MVP, lo que constituye un incremento MENOR según versionado semántico
+(nueva sección / guía materialmente ampliada, sin redefinir ni eliminar ningún principio existente).
 
-Principios modificados:
-  - I. Integridad de Contenido Basada en Evidencia (NO NEGOCIABLE) — sin cambios
-  - II. Contenido como Código — sin cambios
-  - III. Rendimiento y SEO con Prioridad en Servidor — sin cambios
-  - IV. Pruebas Primero para Lógica Crítica (NO NEGOCIABLE) — sin cambios
-  - V. Plantilla de Entrada Consistente y Contenido en Inglés — sin cambios
-  - VI. Requisitos de Seguridad — AÑADIDO
+Principios modificados: ninguno (I–VI sin cambios)
 
 Secciones añadidas:
-  - VI. Requisitos de Seguridad (nuevo principio)
+  - Roadmap Futuro (no implementado) — Community Alternatives, Sponsors, Live Stats
 
 Secciones eliminadas: ninguna
 
 TODOs pendientes: ninguno
 
 Plantillas / archivos a revisar para alineación:
-  - .specify/templates/plan-template.md — verificar referencias de la puerta Constitution Check
-  - .specify/templates/spec-template.md — verificar que las exclusiones de alcance coincidan
-  - .specify/templates/tasks-template.md — verificar el orden de tareas con pruebas primero
+  - Ninguno requiere cambio inmediato — la nueva sección es puramente informativa/de gobernanza; no
+    modifica ninguna puerta de Constitution Check existente en plan-template.md, spec-template.md ni
+    tasks-template.md. Cuando cualquiera de las 3 ideas se priorice, su propio /speckit-plan deberá
+    re-evaluar el Constitution Check contra los principios vigentes en ese momento.
 -->
 
 # Constitución de WhyUndefeated
@@ -143,4 +139,40 @@ semánticos. Todos los pull requests y revisiones DEBEN verificar el cumplimient
 cualquier complejidad añadida DEBE justificarse frente a ellos. Los elementos listados como fuera de
 alcance para el MVP permanecen excluidos hasta que una enmienda documentada los incluya.
 
-**Versión**: 1.1.0 | **Ratificada**: 2026-08-12 | **Última Enmienda**: 2026-08-12
+## Roadmap Futuro (no implementado)
+
+Las siguientes ideas fueron evaluadas y se difieren explícitamente más allá del MVP. **Ninguna está
+implementada hoy.** Esta sección no es una promesa de roadmap con fecha — es un registro de ideas
+evaluadas y el gate que cada una debe pasar antes de construirse, para que no se cuelen como trabajo
+implícito.
+
+### Community Alternatives (Alternativas de la Comunidad)
+
+Los usuarios podrían sugerir apps/retadores alternativos vía un formulario público, con una cuota de
+verificación opcional de bajo costo que otorgue prioridad de listado. **Requiere una estrategia de
+moderación definida antes de construirse** — sin ella, el Principio I (Integridad de Contenido Basada en
+Evidencia) queda expuesto a contenido no verificado o especulativo enviado por terceros.
+
+### Sponsors (Patrocinadores)
+
+Una sección dedicada de patrocinadores en la home, inspirada en el modelo de canivibecodeit. **Requiere un
+mecanismo de pago/facturación** (probablemente manual/fuera del sitio en una primera fase, no
+automatizado). El pago ya está explícitamente fuera de alcance del MVP (ver "Restricciones de Tecnología y
+Arquitectura" → "Explícitamente fuera de alcance para el MVP"); esta idea no se activa sin una enmienda que
+levante esa restricción.
+
+### Live Stats (Estadísticas en Vivo)
+
+Una página de analítica de visitantes agregada y no identificable (a nivel país, conteo de vistas),
+pensada principalmente para respaldar la promoción de sponsors. **Requiere su propia revisión de
+privacidad** frente al Principio VI (Requisitos de Seguridad — sin PII), incluso siendo datos agregados:
+"no identificable" debe verificarse en el diseño concreto, no asumirse por defecto.
+
+### Regla común para las tres
+
+Ninguna de estas ideas se implementa sin su propio ciclo completo `/speckit-specify` → `/speckit-clarify`
+→ `/speckit-plan` → `/speckit-tasks`, y sin volver a chequearse en ese momento contra los principios
+vigentes de esta constitución — en particular, la prohibición de pagos en el MVP y el Principio VI (sin
+PII).
+
+**Versión**: 1.2.0 | **Ratificada**: 2026-08-12 | **Última Enmienda**: 2026-08-17

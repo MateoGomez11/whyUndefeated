@@ -1,0 +1,10 @@
+{
+  "slug": "missing-threat-level",
+  "appName": "Fixture App",
+  "category": "Social",
+  "summary": "A fixture entry missing its required threatLevel field.",
+  "moat": "Placeholder moat explanation for the fixture.",
+  "moatSourceIds": ["s1"],
+  "challengers": [],
+  "sources": [{ "id": "s1", "label": "Fixture source", "url": "https://example.com/fixture" }]
+}

@@ -76,8 +76,10 @@ npx playwright test         # Playwright: e2e (incluye escenario sin JS)
 
 ## Presupuesto de rendimiento (SC-007)
 
-Verificar con Lighthouse (móvil) en páginas de contenido: Performance ≥ 90, LCP < 2.5 s, CLS < 0.1, JS de
-cliente ≤ 30 KB gzip (≈ 0 en esta feature al no haber islas interactivas).
+Verificar con Lighthouse (móvil) en páginas de contenido: Performance ≥ 90, LCP < 2.5 s, CLS < 0.1. JS de
+cliente ~110 KB gzip, aceptado como baseline del framework (Next.js App Router/hidratación de RSC) — no
+hay JS propio de esta feature al no haber islas interactivas; ver research.md Decisión 6 (actualizada
+2026-08-17 tras medición real).
 
 ## Definición de "hecho" para esta feature
 

@@ -1,0 +1,11 @@
+{
+  "slug": "dangling-source-id",
+  "appName": "Fixture App",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "A fixture entry whose challenger cites a sourceId that does not exist.",
+  "moat": "Placeholder moat explanation for the fixture.",
+  "moatSourceIds": ["s1"],
+  "challengers": [{ "name": "Ghost Challenger", "evidence": "Unverifiable claim.", "sourceId": "ghost" }],
+  "sources": [{ "id": "s1", "label": "Fixture source", "url": "https://example.com/fixture" }]
+}
