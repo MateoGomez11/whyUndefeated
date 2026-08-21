@@ -1,0 +1,20 @@
+{
+  "slug": "superhuman",
+  "appName": "Superhuman",
+  "threatLevel": "high",
+  "category": "Knowledge",
+  "summary": "Luxury speed email client — high willingness to pay, but AI native inbox assistants are matching its 100ms speed.",
+  "moat": "Superhuman's moat is prestige branding and keyboard muscle memory: elite founders, VCs, and executives pay $30/month for its sub-100ms offline sync architecture, keyboard command palette, and social status. Its onboarding concierge model created intense early customer loyalty. The threat is that every major email client and indie vibe-coder now adds AI drafting, auto-triaging, and split inboxes natively at zero extra cost.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Shortwave, Spark AI, and AI email copilots",
+      "evidence": "Shortwave and modern email AI tools offer autonomous email drafting and inbox summarization powered by LLMs, directly eroding Superhuman's speed advantage.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Superhuman — The fastest email experience ever made", "url": "https://superhuman.com" },
+    { "id": "s2", "label": "Shortwave AI email client launch", "url": "https://www.shortwave.com/blog/ai-email-assistant/" }
+  ]
+}

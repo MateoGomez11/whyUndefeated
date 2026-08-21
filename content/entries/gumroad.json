@@ -1,0 +1,20 @@
+{
+  "slug": "gumroad",
+  "appName": "Gumroad",
+  "threatLevel": "medium",
+  "category": "Community",
+  "summary": "Creator digital product checkout platform — creator reputation is strong, but flat 10% fee sparked a wave of indie clones.",
+  "moat": "Gumroad's moat is creator discoverability and checkout trust: over 100,000 creators have built buyer histories, affiliate networks, and recurring membership communities on the platform. Its Discover marketplace channels organic cross-traffic between independent authors and educators. However, Gumroad's 2023 fee increase to a flat 10% prompted hundreds of vibe-coded alternatives powered by Stripe and Lemon Squeezy with lower fees.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Lemon Squeezy, Whop, and self-hosted Stripe checkouts",
+      "evidence": "Platforms like Lemon Squeezy and Whop have attracted thousands of indie hackers and digital product sellers with lower transaction fees and modern Merchant-of-Record global tax compliance.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Gumroad annual creator earnings report", "url": "https://gumroad.com/about" },
+    { "id": "s2", "label": "Lemon Squeezy merchant of record platform", "url": "https://www.lemonsqueezy.com" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "raycast",
+  "appName": "Raycast",
+  "threatLevel": "low",
+  "category": "Knowledge",
+  "summary": "Extensible developer launcher on macOS and Windows — developer love, native speed, and 1,500+ extension ecosystem create a deep moat.",
+  "moat": "Raycast's moat is native OS speed, keyboard-first workflow integration, and a thriving developer community that has published over 1,500 open-source extensions connecting GitHub, Linear, Jira, and Spotify. Raycast Pro's native AI integration allows developers to use Claude, GPT-4, and custom AI commands without context-switching away from their active window, turning AI from a competitor into an engagement driver.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Alfred, Spotlight AI, and browser-native command palettes",
+      "evidence": "Apple's Apple Intelligence integration directly inside macOS Spotlight brings local AI queries to all Mac users out of the box, reducing the need for third-party launchers for mainstream consumers.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Raycast extensions store and community", "url": "https://www.raycast.com/store" },
+    { "id": "s2", "label": "Apple Intelligence overview and macOS integration", "url": "https://www.apple.com/apple-intelligence/" }
+  ]
+}

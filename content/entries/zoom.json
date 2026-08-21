@@ -1,0 +1,20 @@
+{
+  "slug": "zoom",
+  "appName": "Zoom",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "Video conferencing benchmark — low-latency video network is solid, but browser WebRTC AI meeting bots are commoditizing calls.",
+  "moat": "Zoom's moat is ultra-reliable media packet optimization over lossy network connections, honed over a decade to deliver flawless video across 300 million daily meeting participants. Zoom Rooms hardware installations and enterprise phone system contracts create long-term enterprise contract commitments that prevent rapid churn.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Google Meet, Microsoft Teams, and WebRTC AI meeting tools",
+      "evidence": "Google Meet and Teams offer native AI meeting notes and live translations at zero marginal cost within existing corporate suites, while browser WebRTC tools like Daily.co allow developers to build customized video rooms in minutes.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Zoom 2024 annual report and platform metrics", "url": "https://investors.zoom.us" },
+    { "id": "s2", "label": "Daily.co real-time video WebRTC platform", "url": "https://www.daily.co/blog" }
+  ]
+}

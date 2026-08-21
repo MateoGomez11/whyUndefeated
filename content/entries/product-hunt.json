@@ -1,0 +1,20 @@
+{
+  "slug": "product-hunt",
+  "appName": "Product Hunt",
+  "threatLevel": "medium",
+  "category": "Community",
+  "summary": "The daily tech launch leaderboard — maker community and badge social proof remain strong despite curation gaming.",
+  "moat": "Product Hunt's moat is the prestige and SEO of its #1 Product of the Day badge: tech investors, journalists, and early adopters use Product Hunt as an industry launch radar, providing immediate initial traffic for new software. The maker profile history and upvote network accumulated over a decade create high community friction for any competing launch directory.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Peerlist, Bento, and AI curation launchpads",
+      "evidence": "Platforms like Peerlist and modern Indie Hackers launch boards are building verified-builder networks that counter the upvote gaming that has plagued Product Hunt leaderboards.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Product Hunt — about the community", "url": "https://www.producthunt.com/about" },
+    { "id": "s2", "label": "Peerlist launchpad and professional network for tech", "url": "https://peerlist.io/about" }
+  ]
+}

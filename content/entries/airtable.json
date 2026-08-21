@@ -1,0 +1,20 @@
+{
+  "slug": "airtable",
+  "appName": "Airtable",
+  "threatLevel": "medium",
+  "category": "Knowledge",
+  "summary": "No-code relational database platform — enterprise workflows are sticky, but AI databases with Postgres backends are rising.",
+  "moat": "Airtable's moat is its no-code relational data model embedded in 300,000+ organizations, connecting marketing calendars, product roadmaps, and inventory pipelines with automated triggers. Its Interface Designer allows non-technical operators to build internal software without code. The emerging challenger wave builds on open-source Postgres and Supabase, using AI to generate schemas and views with zero proprietary lock-in.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "NocoDB, Baserow, and AI Postgres builders",
+      "evidence": "Open-source Airtable alternatives like NocoDB and Baserow have crossed 50,000 GitHub stars combined, offering self-hosted relational databases with native AI query generation.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Airtable enterprise customers and company stats", "url": "https://www.airtable.com/company" },
+    { "id": "s2", "label": "NocoDB open source smart spreadsheet milestone", "url": "https://github.com/nocodb/nocodb" }
+  ]
+}

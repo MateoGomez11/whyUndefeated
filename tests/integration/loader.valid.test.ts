@@ -3,7 +3,9 @@ import { CATEGORIES, THREAT_LEVELS } from '@/lib/content/schema';
 
 const EXPECTED_SLUGS = [
   'airbnb',
+  'airtable',
   'behance',
+  'calendly',
   'canva',
   'coursera',
   'deviantart',
@@ -16,22 +18,34 @@ const EXPECTED_SLUGS = [
   'github',
   'goodreads',
   'google-maps',
+  'gumroad',
+  'hacker-news',
   'instagram',
+  'linear',
   'linkedin',
+  'loom',
+  'mailchimp',
   'medium',
+  'miro',
   'notion',
   'patreon',
   'pinterest',
+  'product-hunt',
   'quora',
+  'raycast',
   'reddit',
+  'slack',
   'spotify',
   'stack-overflow',
   'substack',
+  'superhuman',
   'telegram',
   'tiktok',
+  'trello',
   'tripadvisor',
   'twitch',
   'twitter-x',
+  'typeform',
   'uber',
   'udemy',
   'whatsapp',
@@ -39,6 +53,7 @@ const EXPECTED_SLUGS = [
   'wordpress',
   'yelp',
   'youtube',
+  'zoom',
 ];
 
 describe('loadAllEntries over the real seed content (FR-012, SC-009)', () => {
@@ -47,7 +62,7 @@ describe('loadAllEntries over the real seed content (FR-012, SC-009)', () => {
   it('loads all entries correctly', () => {
     const slugs = entries.map((e) => e.slug).sort();
     expect(slugs).toEqual(EXPECTED_SLUGS);
-    expect(slugs.length).toBe(37);
+    expect(slugs.length).toBe(52);
   });
 
   it('gives every entry a valid category and threat level', () => {

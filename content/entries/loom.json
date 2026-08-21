@@ -1,0 +1,20 @@
+{
+  "slug": "loom",
+  "appName": "Loom",
+  "threatLevel": "high",
+  "category": "Content",
+  "summary": "Asynchronous video messaging tool acquired by Atlassian — browser recording APIs make clones easy to vibe-code.",
+  "moat": "Loom's moat is Atlassian distribution: being bundled into Jira, Confluence, and Trello protects it within enterprise knowledge stacks, with over 21 million users. Instant video encoding and auto-generated transcripts provide seamless asynchronous communication. However, browser MediaRecorder APIs and AI video summary startups allow indie hackers to replicate core screen recording and AI transcription in days.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI screen recorder clones (Tella, Screen Studio, Komodo)",
+      "evidence": "Modern AI video tools generate auto-zoomed screen recordings and translated dubbing in one click, matching Loom's feature set while undercutting its enterprise pricing.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Atlassian completes acquisition of Loom", "url": "https://www.atlassian.com/company/press/press-releases/atlassian-completes-acquisition-of-loom" },
+    { "id": "s2", "label": "Screen Studio and modern video recording tools", "url": "https://screen.studio" }
+  ]
+}

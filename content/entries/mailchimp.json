@@ -1,0 +1,20 @@
+{
+  "slug": "mailchimp",
+  "appName": "Mailchimp",
+  "threatLevel": "high",
+  "category": "Content",
+  "summary": "Email marketing legacy powerhouse — huge SMB user base, but modern developer email APIs are taking new builders.",
+  "moat": "Mailchimp's moat is massive legacy distribution: acquired by Intuit for $12B, it serves millions of small businesses with all-in-one email deliverability, IP reputation, and CRM sync. Its marketing automation and template builder are well understood by non-technical marketing staff. However, new startups and indie vibe-coders overwhelmingly choose developer-first email platforms like Resend and Loops that offer superior DX and lower pricing.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Resend, Loops, and AI-powered newsletter engines",
+      "evidence": "Resend reached over 100,000 developers in its first 18 months with React Email and modern API primitives, capturing the next generation of software products away from Mailchimp.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Intuit completes acquisition of Mailchimp", "url": "https://www.intuit.com/company/press-room/press-releases/2021/Intuit-Completes-Acquisition-of-Mailchimp/" },
+    { "id": "s2", "label": "Resend email platform for developers", "url": "https://resend.com/blog" }
+  ]
+}

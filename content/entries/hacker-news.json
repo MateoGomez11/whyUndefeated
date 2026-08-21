@@ -1,0 +1,20 @@
+{
+  "slug": "hacker-news",
+  "appName": "Hacker News",
+  "threatLevel": "low",
+  "category": "Community",
+  "summary": "Y Combinator's tech forum — legendary high-signal comment culture and strict karma moderation that AI cannot replicate.",
+  "moat": "Hacker News's moat is its unyielding commitment to text-only simplicity, high intellectual standards, and strict cultural moderation backed by Y Combinator's prestige. For two decades, tech founders, elite engineers, and researchers have congregated in HN comment threads to debate technical breakthroughs with deep domain expertise. AI summaries cannot generate the authentic practitioner discourse and contrarian insights that give HN its iconic status.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI tech news aggregators and curated digests",
+      "evidence": "Services like Kagi Small Web and AI newsletter synthesizers summarize top tech discussions automatically, though they lack the live intellectual debate found in native HN threads.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Hacker News guidelines and community history", "url": "https://news.ycombinator.com/newsguidelines.html" },
+    { "id": "s2", "label": "Kagi search and Small Web initiative", "url": "https://blog.kagi.com/small-web" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "typeform",
+  "appName": "Typeform",
+  "threatLevel": "high",
+  "category": "Content",
+  "summary": "Conversational form pioneer — high completion rates, but AI-generated interactive forms are eroding its price premium.",
+  "moat": "Typeform's moat is brand recognition and enterprise compliance: Fortune 500 marketing teams trust its SOC2 compliance, CRM integrations (HubSpot, Salesforce), and signature one-question-at-a-time design that reliably delivers higher response completion rates. The vulnerability is structural: multi-step forms are one of the most frequently vibe-coded UI patterns, and AI can now dynamically generate personalized survey questions in real time.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Tally, Fillout, and dynamic AI form builders",
+      "evidence": "Tally reached over 200,000 creators with a Notion-style form builder offering 95% of Typeform's functionality for free, creating massive downward pricing pressure.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Typeform platform overview and metrics", "url": "https://www.typeform.com/about/" },
+    { "id": "s2", "label": "Tally form builder reaches 200k users", "url": "https://tally.so/blog" }
+  ]
+}

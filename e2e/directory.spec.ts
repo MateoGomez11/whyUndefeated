@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const SEED_COUNT = 37;
+const SEED_COUNT = 52;
 
 test.describe('Home directory (US1)', () => {
   test('shows exactly the seed cards with name, badge text, and summary', async ({ page }) => {

@@ -1,0 +1,20 @@
+{
+  "slug": "trello",
+  "appName": "Trello",
+  "threatLevel": "high",
+  "category": "Knowledge",
+  "summary": "The pioneer of Kanban board collaboration — simple, but one of the most widely replicated web interfaces in history.",
+  "moat": "Trello's moat is radical simplicity and Atlassian bundling: millions of non-technical teams, schools, and families use Trello boards because there is virtually zero learning curve for drag-and-drop cards. Power-Up integrations connect boards to Google Drive, Slack, and Salesforce. The vulnerability is extreme commoditization: a full-featured Kanban board can now be vibe-coded in a single afternoon using modern AI development tools.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Linear, Notion boards, and AI Kanban generators",
+      "evidence": "Notion's native database boards and Linear's engineering workflows have captured modern teams, while open-source Kanban clones like Wekan and Planka provide identical utility for free.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Atlassian Trello platform overview", "url": "https://trello.com/about" },
+    { "id": "s2", "label": "Notion database board features", "url": "https://www.notion.so/help/boards" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "linear",
+  "appName": "Linear",
+  "threatLevel": "medium",
+  "category": "Knowledge",
+  "summary": "Opinionated issue tracking loved by startups — craft polish is high, but AI-native project trackers are emerging.",
+  "moat": "Linear's moat is design perfection, keyboard-first velocity, and deep integration into high-growth software teams' daily workflows. Its sync engine and git-branch linking create a seamless developer experience with extreme user loyalty. However, AI agents that manage sprints, write PR descriptions, and auto-triage backlogs threaten to automate the manual issue management Linear excels at.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI-native issue trackers and autonomous project managers",
+      "evidence": "AI tools like Devin and autonomous coding agents can generate code, open pull requests, and self-assign tasks, reducing the need for human-managed Kanban and sprint workflows.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Linear — The Linear Method", "url": "https://linear.app/method" },
+    { "id": "s2", "label": "Cognition AI launches Devin the first AI software engineer", "url": "https://www.cognition.ai/blog/introducing-devin" }
+  ]
+}

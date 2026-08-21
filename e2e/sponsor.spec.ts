@@ -14,7 +14,7 @@ test.describe('Sponsor Board & Live Telemetry (/sponsor)', () => {
     // Hero headline and metrics
     await expect(page.getByRole('heading', { name: /Sponsor whyundefeated/i })).toBeVisible();
     await expect(page.getByText('Live', { exact: true })).toBeVisible();
-    await expect(page.getByText('37', { exact: true })).toBeVisible();
+    await expect(page.getByText('52', { exact: true })).toBeVisible();
     await expect(page.getByText('builders', { exact: true })).toBeVisible();
     await expect(page.getByText('5 Available')).toBeVisible();
 

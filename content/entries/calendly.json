@@ -1,0 +1,20 @@
+{
+  "slug": "calendly",
+  "appName": "Calendly",
+  "threatLevel": "high",
+  "category": "Community",
+  "summary": "Scheduling automation giant facing rapid commoditization by open-source tools and AI conversational assistants.",
+  "moat": "Calendly's moat is viral adoption: every meeting invite sent acts as a distribution loop exposing non-users to the product, built over a decade into a 20-million-user base. Enterprise admin controls and calendar integrations keep corporate accounts locked in. The threat is severe commoditization: scheduling links are simple to replicate and AI conversational assistants can negotiate meeting times directly over email or chat without links.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Cal.com and AI conversational scheduling assistants",
+      "evidence": "Open-source Cal.com reached over 100,000 active developers offering customizable scheduling, while AI assistants like Clara and ChatGPT schedule meetings autonomously via natural email conversation.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Calendly company milestones and overview", "url": "https://calendly.com/about" },
+    { "id": "s2", "label": "Cal.com open source scheduling platform overview", "url": "https://cal.com/about" }
+  ]
+}

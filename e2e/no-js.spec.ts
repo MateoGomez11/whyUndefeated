@@ -8,7 +8,7 @@ test.describe('Home is readable and usable without JavaScript', () => {
     await page.goto('/');
 
     // Content renders from server HTML.
-    await expect(page.locator('.entry-card')).toHaveCount(37);
+    await expect(page.locator('.entry-card')).toHaveCount(52);
     await expect(page.getByRole('region', { name: 'Threat level legend' })).toBeVisible();
     await expect(page.getByText('HIGH THREAT').first()).toBeVisible();
     await expect(page.getByText('Apps Tracked')).toBeVisible();
@@ -71,7 +71,7 @@ test.describe('Responsive layout works without JavaScript (NFR-001–NFR-004)', 
   }) => {
     await page.goto('/');
     await expect(page.locator('.tracker-header')).toBeHidden();
-    await expect(page.locator('.entry-card')).toHaveCount(37);
+    await expect(page.locator('.entry-card')).toHaveCount(52);
     const href = await page.locator('.entry-card').first().getAttribute('href');
     expect(href).toMatch(/^\/entries\/[a-z0-9-]+$/);
   });

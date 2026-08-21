@@ -1,0 +1,20 @@
+{
+  "slug": "slack",
+  "appName": "Slack",
+  "threatLevel": "low",
+  "category": "Social",
+  "summary": "Enterprise workplace messaging — Salesforce bundling and enterprise workspace graphs create impenetrable switching costs.",
+  "moat": "Slack's moat is deep enterprise infrastructure integration: over 200,000 paid customers with millions of custom bot integrations, compliance archives, and Slack Connect channels connecting partner companies. Once an entire organization's communications and operational alerts live in Slack, migrating hundreds or thousands of employees involves intolerable organizational disruption and security risk.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Microsoft Teams and AI autonomous agent hubs",
+      "evidence": "Microsoft Teams bundled with Office 365 reached 320 million monthly users, while autonomous AI agent workspaces like CrewAI and AutoGen are reimagining workplace communication from human chat to agent-to-agent protocols.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Salesforce Q4 2024 earnings — Slack integration", "url": "https://investor.salesforce.com" },
+    { "id": "s2", "label": "Microsoft Teams 320M monthly active users milestone", "url": "https://www.microsoft.com/en-us/investor" }
+  ]
+}

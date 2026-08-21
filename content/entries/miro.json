@@ -1,0 +1,20 @@
+{
+  "slug": "miro",
+  "appName": "Miro",
+  "threatLevel": "medium",
+  "category": "Content",
+  "summary": "Infinite visual collaboration whiteboard — enterprise enterprise deployments are vast, but tldraw and canvas tools are rising.",
+  "moat": "Miro's moat is enterprise organizational memory: 70 million users across 99% of Fortune 100 companies have diagrams, sprint retrospectives, and architecture maps stored in Miro boards. Its marketplace of 300+ integrations embeds it into enterprise IT setups. The challenger movement uses lightweight canvas engines like tldraw and Excalidraw with AI prompt-to-diagram generation that runs locally without subscriptions.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "tldraw, Excalidraw, and AI visual generators",
+      "evidence": "Open-source canvas library tldraw went viral with make-real AI prototypes, enabling developers to build custom collaborative whiteboards with diagramming AI in minutes.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Miro passes 70 million users milestone", "url": "https://miro.com/about/" },
+    { "id": "s2", "label": "tldraw make-real AI canvas experiment", "url": "https://github.com/tldraw/tldraw" }
+  ]
+}
