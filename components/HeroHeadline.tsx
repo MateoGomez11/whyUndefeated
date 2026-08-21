@@ -70,8 +70,11 @@ export function HeroHeadline({ names }: { names: string[] }) {
     >
       <span style={{ display: 'block', whiteSpace: 'nowrap' }}>
         Is{' '}
-        <span style={{ color: 'var(--brand-400)', borderBottom: '2px solid var(--brand-600)' }}>
-          {text || ' '}
+        <span
+          style={{ color: 'var(--brand-400)', borderBottom: '2px solid var(--brand-600)' }}
+          suppressHydrationWarning
+        >
+          {text}
         </span>
         <span className="ds-cursor" aria-hidden="true" />
       </span>
