@@ -5,7 +5,7 @@ import Link from 'next/link';
 import type { CommunityAlternative } from '@/lib/alternatives/types';
 import { AlternativeCard } from './AlternativeCard';
 import { sortAlternatives } from '@/lib/alternatives/sort';
-import { fetchApprovedAlternatives } from '@/lib/alternatives/client';
+import { fetchAllAlternatives } from '@/lib/alternatives/client';
 
 export function AlternativesGrid({
   initialAlternatives = [],
@@ -17,7 +17,7 @@ export function AlternativesGrid({
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
 
   useEffect(() => {
-    fetchApprovedAlternatives().then((data) => {
+    fetchAllAlternatives().then((data) => {
       if (data && data.length > 0) {
         setAlternativesList(data);
       }

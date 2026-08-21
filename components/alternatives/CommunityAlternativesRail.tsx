@@ -73,7 +73,7 @@ export function CommunityAlternativesRail({
               borderRadius: 'var(--radius-xs)',
             }}
           >
-            {alternatives.length}
+            {altList.length}
           </span>
         </div>
         <p
@@ -277,7 +277,7 @@ export function CommunityAlternativesRail({
       </div>
 
       {/* CTA Button */}
-      {alternatives.length > 0 && (
+      {altList.length > 0 && (
         <Link
           href={`/submit?target=${targetSlug}`}
           style={{
