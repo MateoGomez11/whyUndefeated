@@ -22,12 +22,12 @@ export function VerifiedStackDock({
             <span className="verified-stack-pulse-dot" />
             <span className="verified-stack-title-main">THE STACK</span>
             <span className="verified-stack-title-separator">·</span>
-            <span className="verified-stack-title-sub">5 FEATURED BUILDER TOOLS &amp; SPONSORS</span>
+            <span className="verified-stack-title-sub">5 FEATURED BUILDER TOOLS & SPONSORS</span>
             <span className="verified-stack-title-sub-mobile">(5 SPONSORS)</span>
           </div>
 
           <Link href="/sponsor" className="verified-stack-sponsor-link">
-            BECOME A SPONSOR &rarr;
+            BECOME A SPONSOR →
           </Link>
         </div>
 

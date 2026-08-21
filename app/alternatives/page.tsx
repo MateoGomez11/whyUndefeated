@@ -37,7 +37,7 @@ export default async function AlternativesPage() {
             margin: '0 0 var(--space-3) 0',
           }}
         >
-          Challenger Apps &amp; Alternatives
+          Challenger Apps & Alternatives
         </h1>
 
         <p

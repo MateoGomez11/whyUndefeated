@@ -197,7 +197,7 @@ export function AlternativesGrid({
               textDecoration: 'none',
             }}
           >
-            + Submit your tool now &rarr;
+            + Submit your tool now →
           </Link>
         </div>
       )}

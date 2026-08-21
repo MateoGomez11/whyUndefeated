@@ -16,10 +16,12 @@ export function HeroHeadline({ names }: { names: string[] }) {
   const words = names.length > 0 ? names : ['the internet'];
   // SSR / no-JS state: the full first name.
   const [text, setText] = useState(words[0]);
+  const [isMounted, setIsMounted] = useState(false);
   const wordsRef = useRef(words);
   wordsRef.current = words;
 
   useEffect(() => {
+    setIsMounted(true);
     const w = wordsRef.current;
     let wordIndex = 0;
     let charIndex = w[0].length;
@@ -74,7 +76,7 @@ export function HeroHeadline({ names }: { names: string[] }) {
           style={{ color: 'var(--brand-400)', borderBottom: '2px solid var(--brand-600)' }}
           suppressHydrationWarning
         >
-          {text}
+          {isMounted ? text : words[0]}
         </span>
         <span className="ds-cursor" aria-hidden="true" />
       </span>

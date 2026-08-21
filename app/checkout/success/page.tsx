@@ -45,25 +45,29 @@ export default function CheckoutSuccessPage() {
           margin: '0 0 var(--space-4) 0',
         }}
       >
-        You&apos;re Officially Verified!
+        {"You're Officially Verified!"}
       </h1>
       <p
         style={{
           fontFamily: 'var(--font-mono), monospace',
-          fontSize: 'var(--text-sm)',
+          fontSize: 'var(--text-body)',
           color: 'var(--fg-secondary)',
           lineHeight: 1.6,
-          margin: '0 auto var(--space-8) auto',
+          maxWidth: '560px',
+          margin: '0 auto var(--space-8)',
         }}
       >
-        Thank you for backing independent builder defensibility. Your promotional badge and enhanced
-        ranking position have been synchronized across our edge network.
+        Thank you for submitting to WhyUndefeated. Your priority verification has been registered.
+        Our automated safety scanning and listing pipeline will activate your badge within minutes.
       </p>
 
       <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
         <Link
           href="/alternatives"
           style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
             padding: '12px 24px',
             background: 'var(--brand-500)',
             color: '#ffffff',
@@ -75,7 +79,7 @@ export default function CheckoutSuccessPage() {
             boxShadow: '0 4px 16px rgba(139, 92, 246, 0.4)',
           }}
         >
-          View in Alternatives Directory &rarr;
+          View in Alternatives Directory →
         </Link>
         <Link
           href="/"

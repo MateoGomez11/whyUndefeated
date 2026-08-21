@@ -156,7 +156,7 @@ export function AdminDashboard({
               textTransform: 'uppercase',
             }}
           >
-            Unlock Console &rarr;
+            Unlock Console →
           </button>
         </form>
       </div>

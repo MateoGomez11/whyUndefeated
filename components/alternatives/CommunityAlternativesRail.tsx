@@ -73,7 +73,7 @@ export function CommunityAlternativesRail({
             margin: 0,
           }}
         >
-          Tools &amp; challengers built to compete with {targetAppName}
+          Tools & challengers built to compete with {targetAppName}
         </p>
       </div>
 

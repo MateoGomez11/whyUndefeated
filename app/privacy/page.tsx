@@ -18,7 +18,7 @@ export default function PrivacyPage() {
     >
       <header style={{ marginBottom: 'var(--space-8)' }}>
         <div className="ds-label" style={{ color: 'var(--brand-400)', marginBottom: '8px' }}>
-          PRIVACY &amp; DATA PROTECTION
+          PRIVACY & DATA PROTECTION
         </div>
         <h1
           style={{
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p style={{ fontFamily: 'var(--font-mono), monospace', fontSize: 'var(--text-xs)', color: 'var(--fg-tertiary)' }}>
-          Last updated: August 2026 · Compliant with GDPR &amp; CCPA principles
+          Last updated: August 2026 · Compliant with GDPR & CCPA principles
         </p>
       </header>
 
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
 
         <div>
           <h2 style={{ fontSize: 'var(--text-h3)', color: 'var(--brand-400)', marginBottom: '8px' }}>
-            2. What Data We Collect &amp; Why
+            2. What Data We Collect & Why
           </h2>
           <ul style={{ color: 'var(--fg-secondary)', paddingLeft: '20px' }}>
             <li>
@@ -85,7 +85,7 @@ export default function PrivacyPage() {
 
         <div>
           <h2 style={{ fontSize: 'var(--text-h3)', color: 'var(--brand-400)', marginBottom: '8px' }}>
-            5. Your Rights (GDPR &amp; CCPA Access / Deletion)
+            5. Your Rights (GDPR & CCPA Access / Deletion)
           </h2>
           <p style={{ color: 'var(--fg-secondary)' }}>
             You have the absolute right to request an export of any contact information associated with your submitted project, or request the immediate and permanent deletion of your project and contact record from our servers. To exercise these rights, email{' '}

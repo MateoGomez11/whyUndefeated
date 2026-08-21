@@ -367,7 +367,7 @@ export function SubmitAlternativeForm({
               textDecoration: 'none',
             }}
           >
-            Explore Directory &rarr;
+            Explore Directory →
           </Link>
           <button
             type="button"
@@ -836,7 +836,7 @@ export function SubmitAlternativeForm({
               marginBottom: '8px',
             }}
           >
-            Listing Tier &amp; Verification
+            Listing Tier & Verification
           </label>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -848,7 +848,7 @@ export function SubmitAlternativeForm({
                 gap: '10px',
                 padding: '10px 12px',
                 background: verificationTier === 'none' ? 'var(--bg-2)' : 'transparent',
-                border: `1px solid ${verificationTier === 'none' ? 'var(--border-default)' : 'var(--border-subtle)'}`,
+                border: `1px solid ${verificationTier === 'none' ? 'var(--border-strong)' : 'var(--border-subtle)'}`,
                 borderRadius: 'var(--radius-xs)',
                 cursor: 'pointer',
               }}
@@ -870,10 +870,10 @@ export function SubmitAlternativeForm({
                     color: 'var(--fg-primary)',
                   }}
                 >
-                  Standard Community Submission · Free
+                  Standard Community Listing · $0 (Free)
                 </span>
                 <p style={{ margin: '2px 0 0 0', fontSize: '11px', fontFamily: 'var(--font-mono), monospace', color: 'var(--fg-tertiary)' }}>
-                  Standard listing subject to normal community queue.
+                  Submitted to community queue. Standard review.
                 </p>
               </div>
             </label>
@@ -885,7 +885,7 @@ export function SubmitAlternativeForm({
                 alignItems: 'flex-start',
                 gap: '10px',
                 padding: '10px 12px',
-                background: verificationTier === 'verified' ? 'rgba(139, 92, 246, 0.12)' : 'transparent',
+                background: verificationTier === 'verified' ? 'var(--brand-tint-08)' : 'transparent',
                 border: `1px solid ${verificationTier === 'verified' ? 'var(--brand-500)' : 'var(--border-subtle)'}`,
                 borderRadius: 'var(--radius-xs)',
                 cursor: 'pointer',
@@ -911,7 +911,7 @@ export function SubmitAlternativeForm({
                   ⚡ Verified Creator Badge · $19 USD (One-time)
                 </span>
                 <p style={{ margin: '2px 0 0 0', fontSize: '11px', fontFamily: 'var(--font-mono), monospace', color: 'var(--fg-secondary)' }}>
-                  Official purple VERIFIED badge &amp; priority placement above standard submissions.
+                  Official purple VERIFIED badge & priority placement above standard submissions.
                 </p>
               </div>
             </label>
@@ -946,7 +946,7 @@ export function SubmitAlternativeForm({
                     color: 'var(--threat-medium)',
                   }}
                 >
-                  🚀 Priority Fast-Track &amp; #1 Slot · $29 USD (One-time)
+                  🚀 Priority Fast-Track & #1 Slot · $29 USD (One-time)
                 </span>
                 <p style={{ margin: '2px 0 0 0', fontSize: '11px', fontFamily: 'var(--font-mono), monospace', color: 'var(--fg-secondary)' }}>
                   Express 12h review + Top #1 position guarantee over competitors.
@@ -1173,7 +1173,7 @@ export function SubmitAlternativeForm({
         >
           💡 <strong>Community Ranking Algorithm:</strong>
           <br />
-          1. 🚀 Priority Fast-Track ($29) &amp; ⚡ Verified ($19) apps rank first.
+          1. 🚀 Priority Fast-Track ($29) & ⚡ Verified ($19) apps rank first.
           <br />
           2. Apps with more community upvotes (▲) appear higher in the directory.
           <br />
