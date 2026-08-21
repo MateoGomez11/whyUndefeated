@@ -65,7 +65,7 @@ export function VerifiedStackDock({
 
                   {/* Bottom: Purple Claim Button / Visit Link */}
                   <div className="stack-card-bottom">
-                    <span className="stack-card-slot-num">SLOT {slotNum}</span>
+                    <span className="stack-card-slot-num">{`SLOT ${slotNum}`}</span>
                     <span className="stack-card-badge">
                       {isTaken ? 'Visit ↗' : `Claim · $${priceWeeklyUsd}/wk`}
                     </span>
@@ -107,7 +107,7 @@ export function VerifiedStackDock({
 
                   {/* Bottom: Purple Claim Button / Visit Link */}
                   <div className="stack-card-bottom">
-                    <span className="stack-card-slot-num">SLOT {slotNum}</span>
+                    <span className="stack-card-slot-num">{`SLOT ${slotNum}`}</span>
                     <span className="stack-card-badge">
                       {isTaken ? 'Visit ↗' : `Claim · $${priceWeeklyUsd}/wk`}
                     </span>

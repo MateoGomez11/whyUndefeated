@@ -126,7 +126,7 @@ export function HomeDirectory({ entries }: { entries: Entry[] }) {
             letterSpacing: 'var(--tracking-label)',
           }}
         >
-          All ({entries.length})
+          {`All (${entries.length})`}
         </button>
 
         {categories.map((cat) => {
@@ -151,7 +151,7 @@ export function HomeDirectory({ entries }: { entries: Entry[] }) {
                 letterSpacing: 'var(--tracking-label)',
               }}
             >
-              {cat} ({count})
+              {`${cat} (${count})`}
             </button>
           );
         })}

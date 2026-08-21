@@ -66,7 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" suppressHydrationWarning className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
-      <head>
+      <body className="app-root-body">
         {umamiWebsiteId && (
           <Script
             src={umamiScriptUrl}
@@ -74,8 +74,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             strategy="afterInteractive"
           />
         )}
-      </head>
-      <body className="app-root-body">
         <NavBar active="Home" />
         <div style={{ flex: 1 }}>{children}</div>
         <Footer />
