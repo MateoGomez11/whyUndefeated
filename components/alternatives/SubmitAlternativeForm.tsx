@@ -271,10 +271,24 @@ export function SubmitAlternativeForm({
                 color: 'var(--brand-400)',
                 textTransform: 'uppercase',
                 fontWeight: 700,
-                marginBottom: '4px',
+                marginBottom: '6px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
               }}
             >
-              Step 2 of 2: Complete Checkout
+              <span
+                style={{
+                  background: 'var(--brand-500)',
+                  color: '#ffffff',
+                  padding: '2px 8px',
+                  borderRadius: 'var(--radius-xs)',
+                  fontSize: '10px',
+                }}
+              >
+                AUTOMATED CHECKOUT COMING SOON
+              </span>
+              <span>· {tierTitle}</span>
             </div>
             <h3
               style={{
@@ -284,53 +298,46 @@ export function SubmitAlternativeForm({
                 margin: '0 0 6px 0',
               }}
             >
-              {tierTitle} · {amount} USD
+              🚀 Tier Reservation Saved!
             </h3>
             <p
               style={{
                 fontFamily: 'var(--font-mono), monospace',
                 fontSize: '12px',
                 color: 'var(--fg-secondary)',
-                lineHeight: 1.5,
+                lineHeight: 1.6,
                 margin: '0 0 var(--space-4) 0',
               }}
             >
-              To activate your official <strong>VERIFIED</strong> badge and guarantee #1 priority
-              ranking on the directory, complete your {amount} one-time founder checkout.
+              Your project is now queued for priority review. Automated credit card payments are activating soon.
+              We will notify you at <strong>{creatorEmail}</strong> as soon as founder verification goes live!
             </p>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
-              <button
-                type="button"
-                disabled={isCheckingOut}
-                onClick={handleStripeCheckout}
+              <div
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '12px 24px',
-                  background: verificationTier === 'priority' ? 'var(--threat-medium)' : 'var(--brand-500)',
-                  color: '#ffffff',
+                  padding: '10px 18px',
+                  background: 'var(--bg-2)',
+                  color: 'var(--brand-400)',
                   borderRadius: 'var(--radius-xs)',
                   fontFamily: 'var(--font-mono), monospace',
-                  fontSize: 'var(--text-sm)',
+                  fontSize: 'var(--text-xs)',
                   fontWeight: 700,
-                  border: 'none',
-                  cursor: isCheckingOut ? 'not-allowed' : 'pointer',
-                  boxShadow: '0 4px 16px rgba(139, 92, 246, 0.4)',
+                  border: '1px dashed var(--brand-500)',
                 }}
               >
-                {isCheckingOut ? 'Opening Stripe...' : `⚡ Pay ${amount} with Stripe →`}
-              </button>
+                ⚡ Payment Gateway: Launching Soon
+              </div>
 
               <a
-                href={`mailto:sponsor@whyundefeated.com?subject=Manual%20Checkout%20${encodeURIComponent(
+                href={`mailto:sponsor@whyundefeated.com?subject=Early%20Verification%20Inquiry%20${encodeURIComponent(
                   tierTitle,
-                )}%20for%20${encodeURIComponent(name)}&body=App%20Name:%20${encodeURIComponent(
+                )}%20for%20${encodeURIComponent(name)}&body=Hi%2C%20I%20submitted%20${encodeURIComponent(
                   name,
-                )}%0AURL:%20${encodeURIComponent(url)}%0AEmail:%20${encodeURIComponent(
-                  creatorEmail,
-                )}%0APlan:%20${amount}`}
+                )}%20for%20the%20${encodeURIComponent(tierTitle)}%20tier.`}
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -344,7 +351,7 @@ export function SubmitAlternativeForm({
                   textDecoration: 'none',
                 }}
               >
-                Pay via Invoice / Email
+                Inquire / Early Access via Email →
               </a>
             </div>
           </div>
@@ -908,10 +915,10 @@ export function SubmitAlternativeForm({
                     color: 'var(--brand-400)',
                   }}
                 >
-                  ⚡ Verified Creator Badge · $19 USD (One-time)
+                  ⚡ Verified Creator Badge · $19 USD (Launching Soon)
                 </span>
                 <p style={{ margin: '2px 0 0 0', fontSize: '11px', fontFamily: 'var(--font-mono), monospace', color: 'var(--fg-secondary)' }}>
-                  Official purple VERIFIED badge & priority placement above standard submissions.
+                  Reserve official purple VERIFIED badge & priority placement. Automated checkout activating soon.
                 </p>
               </div>
             </label>
@@ -946,10 +953,10 @@ export function SubmitAlternativeForm({
                     color: 'var(--threat-medium)',
                   }}
                 >
-                  🚀 Priority Fast-Track & #1 Slot · $29 USD (One-time)
+                  🚀 Priority Fast-Track & #1 Slot · $29 USD (Launching Soon)
                 </span>
                 <p style={{ margin: '2px 0 0 0', fontSize: '11px', fontFamily: 'var(--font-mono), monospace', color: 'var(--fg-secondary)' }}>
-                  Express 12h review + Top #1 position guarantee over competitors.
+                  Reserve Express 12h review + Top #1 position guarantee. Automated checkout activating soon.
                 </p>
               </div>
             </label>
