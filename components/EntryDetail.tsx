@@ -91,7 +91,7 @@ export function EntryDetail({
                 borderRadius: 'var(--radius-xs)',
               }}
             >
-              {alternatives.length} Community Alternative{alternatives.length === 1 ? '' : 's'}
+              {`${alternatives.length} Community Alternative${alternatives.length === 1 ? '' : 's'}`}
             </span>
           </div>
           <h1
