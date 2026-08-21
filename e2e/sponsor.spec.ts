@@ -41,7 +41,7 @@ test.describe('Sponsor Board & Live Telemetry (/sponsor)', () => {
   test('slot cards have mailto claim links for open slots', async ({ page }) => {
     await page.goto('/sponsor');
 
-    const openCards = page.locator('main .entry-card[href^="mailto:sponsors@whyundefeated.com"]');
+    const openCards = page.locator('main .entry-card[href^="mailto:sponsor@whyundefeated.com"]');
     await expect(openCards).toHaveCount(5);
     await expect(openCards.first()).toContainText('AVAILABLE · OPEN');
   });

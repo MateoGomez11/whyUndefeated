@@ -58,7 +58,7 @@ export function SponsorSlotsGrid({
 
           const href = isTaken && slot.url
             ? slot.url
-            : `mailto:sponsors@whyundefeated.com?subject=Sponsor%20Slot%20Inquiry%20-%20Slot%20${slot.id}`;
+            : `mailto:sponsor@whyundefeated.com?subject=Sponsor%20Slot%20Inquiry%20-%20Slot%20${slot.id}`;
 
           const target = isTaken ? '_blank' : undefined;
           const rel = isTaken ? 'noopener noreferrer' : undefined;
