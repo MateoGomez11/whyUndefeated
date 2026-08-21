@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { loadAllEntries, getEntryBySlug } from '@/lib/content/loader';
 import { relatedEntries } from '@/lib/content/related';
+import { fetchAlternativesForSlug } from '@/lib/alternatives/client';
 import { EntryDetail } from '@/components/EntryDetail';
 
 // Statically generated: exactly the 7 seed slugs, no client fetching, fully
@@ -18,6 +19,7 @@ export default async function EntryDetailPage({ params }: { params: Promise<{ sl
   if (!entry) notFound();
 
   const related = relatedEntries(entry, loadAllEntries());
+  const alternatives = await fetchAlternativesForSlug(entry.slug);
 
-  return <EntryDetail entry={entry} related={related} />;
+  return <EntryDetail entry={entry} related={related} alternatives={alternatives} />;
 }

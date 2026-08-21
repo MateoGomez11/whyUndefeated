@@ -1,0 +1,20 @@
+{
+  "slug": "github",
+  "appName": "GitHub",
+  "threatLevel": "low",
+  "category": "Knowledge",
+  "summary": "Developer platform with 420M repositories — the social graph of software is deeply entrenched and AI strengthens it.",
+  "moat": "GitHub's moat is the world's largest corpus of open-source code (over 420 million repositories) combined with the social graph of software development: forks, stars, pull request histories, and contributor reputations built over years. Its CI/CD Actions infrastructure and issue-tracking are embedded in the deployment pipelines of millions of production systems. Migrating these workflows carries massive switching costs for engineering teams.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "GitLab and alternative DevOps platforms",
+      "evidence": "GitLab offers a fully integrated DevOps platform with its own CI/CD and AI code suggestions, attracting enterprises that prefer to self-host their development infrastructure away from Microsoft-owned GitHub.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "GitHub Octoverse 2024 report", "url": "https://octoverse.github.com/" },
+    { "id": "s2", "label": "GitLab 2024 annual report", "url": "https://ir.gitlab.com/financial-information/annual-reports" }
+  ]
+}

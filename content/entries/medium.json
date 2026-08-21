@@ -1,0 +1,20 @@
+{
+  "slug": "medium",
+  "appName": "Medium",
+  "threatLevel": "high",
+  "category": "Content",
+  "summary": "Long-form publishing platform under pressure from AI writing tools that replicate its output at zero marginal cost.",
+  "moat": "Medium's moat is its curated distribution: the Partner Program pays writers based on member reading time, creating an incentive to write for depth rather than clicks. Its editorial curation and niche publication ecosystem attract a paying readership willing to subscribe for quality writing. However, AI writing tools produce passable long-form drafts in minutes, flooding the platform with low-quality content and devaluing human authorship.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "ChatGPT and AI writing assistants",
+      "evidence": "A 2024 study found over 60% of analyzed Medium articles showed signs of AI-generated text, threatening the human authenticity signal that paying subscribers value.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Medium Partner Program overview", "url": "https://help.medium.com/hc/en-us/articles/115011694187-Getting-started-with-the-Partner-Program" },
+    { "id": "s2", "label": "AI-generated content flooding publishing platforms — Reuters", "url": "https://www.reuters.com/technology/2024-08-15/" }
+  ]
+}

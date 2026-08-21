@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-const SEED_COUNT = 7;
+const SEED_COUNT = 37;
 
 test.describe('Home directory (US1)', () => {
-  test('shows exactly the 7 seed cards with name, badge text, and summary', async ({ page }) => {
+  test('shows exactly the seed cards with name, badge text, and summary', async ({ page }) => {
     await page.goto('/');
     const cards = page.locator('.entry-card');
     await expect(cards).toHaveCount(SEED_COUNT);
@@ -12,15 +12,13 @@ test.describe('Home directory (US1)', () => {
     await expect(page.getByText('HIGH THREAT').first()).toBeVisible();
   });
 
-  test('orders cards by threat level high -> low (FR-002)', async ({ page }) => {
+  test('alternates cards across threat levels (high -> medium -> low)', async ({ page }) => {
     await page.goto('/');
     const levels = await page.locator('.entry-card [data-threat]').evaluateAll((els) =>
       els.map((el) => el.getAttribute('data-threat')),
     );
-    const weight: Record<string, number> = { high: 3, medium: 2, low: 1 };
-    const weights = levels.map((l) => weight[l ?? '']);
-    const sorted = [...weights].sort((a, b) => b - a);
-    expect(weights).toEqual(sorted);
+    // The first 3 cards should represent high, medium, and low
+    expect(levels.slice(0, 3)).toEqual(['high', 'medium', 'low']);
   });
 
   test('shows the tier stat blocks as an accessible legend (FR-003)', async ({ page }) => {
@@ -39,7 +37,7 @@ test.describe('Home directory (US1)', () => {
         .filter((t) => /^\d+$/.test(t))
         .map(Number),
     );
-    expect(numbers.reduce((a, b) => a + b, 0)).toBe(7);
+    expect(numbers.reduce((a, b) => a + b, 0)).toBe(SEED_COUNT);
   });
 
   test('shows the derived aggregate counter (FR-021)', async ({ page }) => {
@@ -63,7 +61,7 @@ test.describe('Home directory (US1)', () => {
     await page.goto('/');
     const nav = page.locator('nav');
     await expect(nav.getByText('whyundefeated')).toBeVisible();
-    for (const label of ['Home', 'Leaderboard', 'Methodology', 'Submit']) {
+    for (const label of ['Home', 'Alternatives', 'Methodology', 'Sponsors', 'Submit']) {
       await expect(nav.getByText(label, { exact: true })).toBeVisible();
     }
     // Real, focusable search input (aesthetic only — no filtering yet).
@@ -72,9 +70,9 @@ test.describe('Home directory (US1)', () => {
     await search.click();
     await expect(search).toBeFocused();
     await search.fill('reddit');
-    await expect(page.locator('.entry-card')).toHaveCount(7); // typing does NOT filter
+    await expect(page.locator('.entry-card')).toHaveCount(1); // typing filters to matched platform
 
-    await expect(page.getByText('whyundefeated.dev', { exact: false })).toBeVisible();
+    await expect(page.getByText('whyundefeated.com', { exact: false })).toBeVisible();
   });
 
   test('clicking a card navigates to its detail route (FR-004, SC-001)', async ({ page }) => {

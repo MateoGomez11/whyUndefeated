@@ -126,7 +126,7 @@ e2e/
 └── voting.spec.ts                # NUEVO: votar, cambiar voto, conteo concurrente, degradación sin
                                    # Supabase (page.route mock), legibilidad sin JS (proyecto no-js)
 
-.env.example                      # Modificado: + NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY
+.env.example                      # NUEVO: + NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY
 package.json                      # Modificado: + dependencia @supabase/supabase-js
 ```
 

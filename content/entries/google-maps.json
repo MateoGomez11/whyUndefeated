@@ -1,0 +1,20 @@
+{
+  "slug": "google-maps",
+  "appName": "Google Maps",
+  "threatLevel": "medium",
+  "category": "Knowledge",
+  "summary": "Real-time navigation and local discovery — Street View and review depth create a hard-to-replicate physical-world data moat.",
+  "moat": "Google Maps' moat is its proprietary Street View imagery covering 220 countries, real-time traffic data crowdsourced from billions of Android devices, and over a billion user-contributed reviews and photos. This physical-world data layer is expensive to replicate and cannot be scraped. Navigation depends on the freshness of road conditions that requires continuous sensor input from its massive installed base.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "ChatGPT local search with Yelp integration",
+      "evidence": "OpenAI added local search with Yelp integration to ChatGPT in 2024, enabling users to get restaurant and venue recommendations directly without opening Maps.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Google Maps Platform — Street View coverage", "url": "https://developers.google.com/maps/documentation/streetview/overview" },
+    { "id": "s2", "label": "ChatGPT Yelp local search integration — TechCrunch", "url": "https://techcrunch.com/2024/05/01/chatgpt-can-now-find-local-restaurants-and-experiences-through-yelp/" }
+  ]
+}

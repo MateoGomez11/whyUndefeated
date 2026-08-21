@@ -1,0 +1,20 @@
+{
+  "slug": "facebook",
+  "appName": "Facebook",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "Meta's flagship network — Groups and Marketplace create local community lock-in despite aging demographics.",
+  "moat": "Facebook's primary moat is its Groups infrastructure: 1.8 billion people use Facebook Groups monthly for hyper-local communities, neighborhood watches, buy-and-sell circles, and hobby niches that are difficult to migrate. Events and Marketplace create additional utility gravity. AI cannot replicate the trust and history embedded in an established local community group.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Meta AI feed integration",
+      "evidence": "Meta is integrating Meta AI across Facebook feeds, risking that AI summaries abstract away human posts and reduce the organic engagement that keeps communities active.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Meta Q4 2024 earnings — Facebook Groups", "url": "https://investor.fb.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/" },
+    { "id": "s2", "label": "Meta AI rollout across apps", "url": "https://ai.meta.com/meta-ai/" }
+  ]
+}

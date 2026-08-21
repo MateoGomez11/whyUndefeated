@@ -1,0 +1,20 @@
+{
+  "slug": "telegram",
+  "appName": "Telegram",
+  "threatLevel": "low",
+  "category": "Social",
+  "summary": "Encrypted messaging and channel platform with 950M+ users — privacy-first positioning and channels create strong community lock-in.",
+  "moat": "Telegram's moat combines encryption trust with channel and supergroup infrastructure hosting millions of communities outside mainstream moderation. Its 950+ million user base means many communities exist only on Telegram, creating destination lock-in for members seeking access to those groups. The platform's bot API has become the backbone of automated community tools and payment flows in many emerging markets.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Signal and privacy-first messaging alternatives",
+      "evidence": "Signal gained 40 million downloads in a single week in January 2021 after WhatsApp policy changes, demonstrating that Telegram's user base can shift rapidly when platform trust is disrupted.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Telegram 950 million users milestone", "url": "https://telegram.org/blog/700-million" },
+    { "id": "s2", "label": "Signal 40 million downloads in one week — Reuters", "url": "https://www.reuters.com/article/us-signal-whatsapp/signal-downloads-surge-after-whatsapp-terms-change-idUSKBN29E0LW" }
+  ]
+}

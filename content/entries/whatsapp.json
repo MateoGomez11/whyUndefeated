@@ -1,0 +1,20 @@
+{
+  "slug": "whatsapp",
+  "appName": "WhatsApp",
+  "threatLevel": "low",
+  "category": "Social",
+  "summary": "Meta's 2B-user messaging network — the contact list network effect is one of the strongest moats in technology.",
+  "moat": "WhatsApp's moat is pure network effect at massive scale: with over 2 billion monthly active users, refusing to use WhatsApp in many countries means being cut off from family, friends, businesses, and civic communication. The switching cost is not the app — it is the impossibility of getting an entire social network to migrate simultaneously. End-to-end encryption and Meta's infrastructure have made it the de facto communication layer for billions.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Meta AI integration changing the communication dynamic",
+      "evidence": "Meta is integrating Meta AI directly into WhatsApp conversations, which could alter the human-to-human communication dynamic that defines the platform's core value proposition.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Meta Q4 2024 earnings — WhatsApp 2B users", "url": "https://investor.fb.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/" },
+    { "id": "s2", "label": "Meta AI in WhatsApp", "url": "https://ai.meta.com/meta-ai/" }
+  ]
+}

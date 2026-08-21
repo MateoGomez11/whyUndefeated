@@ -8,7 +8,7 @@ test.describe('Home is readable and usable without JavaScript', () => {
     await page.goto('/');
 
     // Content renders from server HTML.
-    await expect(page.locator('.entry-card')).toHaveCount(7);
+    await expect(page.locator('.entry-card')).toHaveCount(37);
     await expect(page.getByRole('region', { name: 'Threat level legend' })).toBeVisible();
     await expect(page.getByText('HIGH THREAT').first()).toBeVisible();
     await expect(page.getByText('Apps Tracked')).toBeVisible();
@@ -63,7 +63,7 @@ test.describe('Responsive layout works without JavaScript (NFR-001–NFR-004)', 
 
     await page.locator('label.nav-toggle-label').click();
     await expect(navLinks).toBeVisible();
-    await expect(navLinks.getByText('Leaderboard')).toBeVisible();
+    await expect(navLinks.getByText('Alternatives')).toBeVisible();
   });
 
   test('home tracker table renders as stacked cards at mobile width, still readable and linked', async ({
@@ -71,7 +71,7 @@ test.describe('Responsive layout works without JavaScript (NFR-001–NFR-004)', 
   }) => {
     await page.goto('/');
     await expect(page.locator('.tracker-header')).toBeHidden();
-    await expect(page.locator('.entry-card')).toHaveCount(7);
+    await expect(page.locator('.entry-card')).toHaveCount(37);
     const href = await page.locator('.entry-card').first().getAttribute('href');
     expect(href).toMatch(/^\/entries\/[a-z0-9-]+$/);
   });
@@ -92,7 +92,7 @@ test.describe('Methodology page is readable without JavaScript', () => {
     page,
   }) => {
     await page.goto('/');
-    const href = await page.getByRole('link', { name: 'Methodology' }).getAttribute('href');
+    const href = await page.getByRole('navigation').getByRole('link', { name: 'Methodology' }).getAttribute('href');
     expect(href).toBe('/methodology');
   });
 });

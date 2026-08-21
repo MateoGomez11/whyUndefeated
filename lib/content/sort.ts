@@ -8,13 +8,30 @@ export function threatWeight(level: ThreatLevel): number {
 }
 
 /**
- * Order entries by threat level descending (high -> low), breaking ties
- * alphabetically by appName ascending. Pure; does not mutate the input.
+ * Alternate entries between high, medium, and low threat levels in round-robin fashion,
+ * sorting alphabetically within each tier to ensure deterministic output.
+ * Pure; does not mutate the input.
  */
 export function sortEntries(entries: readonly Entry[]): Entry[] {
-  return [...entries].sort((a, b) => {
-    const byWeight = threatWeight(b.threatLevel) - threatWeight(a.threatLevel);
-    if (byWeight !== 0) return byWeight;
-    return a.appName.localeCompare(b.appName);
-  });
+  const highs = entries
+    .filter((e) => e.threatLevel === 'high')
+    .sort((a, b) => a.appName.localeCompare(b.appName));
+  const mediums = entries
+    .filter((e) => e.threatLevel === 'medium')
+    .sort((a, b) => a.appName.localeCompare(b.appName));
+  const lows = entries
+    .filter((e) => e.threatLevel === 'low')
+    .sort((a, b) => a.appName.localeCompare(b.appName));
+
+  const result: Entry[] = [];
+  const maxLen = Math.max(highs.length, mediums.length, lows.length);
+
+  for (let i = 0; i < maxLen; i++) {
+    if (i < highs.length) result.push(highs[i]);
+    if (i < mediums.length) result.push(mediums[i]);
+    if (i < lows.length) result.push(lows[i]);
+  }
+
+  return result;
 }
+

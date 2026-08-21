@@ -1,0 +1,20 @@
+{
+  "slug": "behance",
+  "appName": "Behance",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "Adobe's creative portfolio network — professional reputation and hiring credential use case remains sticky despite AI image tools.",
+  "moat": "Behance's moat is its role as the professional identity layer for creative industries: designers, illustrators, and photographers maintain portfolios that serve as hiring credentials and client proof-of-work. Adobe's integration with Creative Cloud embeds Behance in the workflow of 33 million Creative Cloud subscribers. Professional creative reputation accumulated over years cannot be faked by AI without undermining its purpose.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Adobe Firefly AI image generation",
+      "evidence": "Adobe Firefly generated over 9 billion AI images in its first year, raising questions about whether AI-assisted work displaces the showcase value of traditional human design portfolios on Behance.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Adobe Creative Cloud 33 million subscribers", "url": "https://www.adobe.com/investor-relations/annual-reports.html" },
+    { "id": "s2", "label": "Adobe Firefly 9 billion images milestone", "url": "https://blog.adobe.com/en/publish/2024/03/18/adobe-firefly-reaches-9-billion-generations" }
+  ]
+}

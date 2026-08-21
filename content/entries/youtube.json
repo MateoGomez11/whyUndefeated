@@ -1,0 +1,27 @@
+{
+  "slug": "youtube",
+  "appName": "YouTube",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "The world's largest video platform — irreplaceable for creator personality but exposed on tutorial search intent.",
+  "moat": "YouTube's moat rests on its creator monetization flywheel: 2 billion logged-in users generate ad revenue that flows back to creators, locking in a supply side no rival has replicated at scale. Its recommendation graph is trained on trillions of watch signals that encode nuanced human taste and community loyalty. However, AI-generated video and direct AI answers to how-to queries threaten the information-lookup use case that drives a significant share of non-entertainment views.",
+  "moatSourceIds": ["s1", "s2"],
+  "challengers": [
+    {
+      "name": "Sora and AI video generation",
+      "evidence": "OpenAI's Sora can generate high-fidelity 60-second videos from text prompts, signaling a near-future where AI-produced content competes for views on YouTube's own platform.",
+      "sourceId": "s3"
+    },
+    {
+      "name": "Google AI Overviews",
+      "evidence": "Google's AI Overviews answer how-to queries directly in search, reducing click-through to YouTube tutorial videos which represent a large share of non-entertainment traffic.",
+      "sourceId": "s4"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "YouTube — 2 billion users milestone announcement", "url": "https://blog.youtube/news-and-events/youtube-at-15-a-look-at-whats-next/" },
+    { "id": "s2", "label": "Alphabet Q4 2024 earnings — YouTube revenue", "url": "https://abc.xyz/investor/" },
+    { "id": "s3", "label": "OpenAI Sora announcement", "url": "https://openai.com/sora" },
+    { "id": "s4", "label": "Google AI Overviews expansion", "url": "https://blog.google/products/search/ai-overviews-expansion/" }
+  ]
+}

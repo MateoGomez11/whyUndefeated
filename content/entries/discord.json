@@ -1,0 +1,20 @@
+{
+  "slug": "discord",
+  "appName": "Discord",
+  "threatLevel": "low",
+  "category": "Community",
+  "summary": "Real-time community platform — guild social graphs and voice channels create deeply embedded community infrastructure.",
+  "moat": "Discord's moat is the community infrastructure it has become for online groups: gaming guilds, developer communities, artist collectives, and brand fan bases have built their social identities inside Discord servers over years. Migrating a community means convincing every member to move and rebuilding permission structures — a high-friction process most communities avoid. Its voice channel infrastructure for real-time group interaction is particularly difficult to replicate.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Character.ai group chats and AI-first social platforms",
+      "evidence": "Character.ai launched group chats in 2024 where users interact with AI characters alongside friends, attracting Discord's younger demographics toward AI-first social experiences.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Discord company overview", "url": "https://discord.com/company" },
+    { "id": "s2", "label": "Character.ai group chats launch — TechCrunch", "url": "https://techcrunch.com/2024/04/16/character-ai-is-launching-group-chats/" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "udemy",
+  "appName": "Udemy",
+  "threatLevel": "high",
+  "category": "Knowledge",
+  "summary": "Video course marketplace — commoditized instructional content is highly vulnerable to interactive AI learning assistants.",
+  "moat": "Udemy's moat is its breadth: over 250,000 courses across virtually every skill domain, combined with a 73-million-learner base that creates social proof through ratings and reviews. Its B2B Udemy Business offering embeds it in corporate L&D budgets with renewal cycles. The weakness is structural: most Udemy courses teach skills through passive video watching, a format that AI tutors demonstrably outperform on retention and speed.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI coding assistants replacing tutorial courses",
+      "evidence": "GitHub Copilot, Cursor, and Claude teach developers interactively while they code, replacing the need to purchase Udemy programming courses — the platform's largest revenue category.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Udemy 2024 annual report", "url": "https://investors.udemy.com/financial-information/annual-reports" },
+    { "id": "s2", "label": "Cursor AI coding assistant raises $60M — TechCrunch", "url": "https://techcrunch.com/2024/08/15/cursor-the-ai-code-editor-just-raised-60m/" }
+  ]
+}

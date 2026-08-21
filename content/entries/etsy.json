@@ -1,0 +1,20 @@
+{
+  "slug": "etsy",
+  "appName": "Etsy",
+  "threatLevel": "medium",
+  "category": "Community",
+  "summary": "Handmade and vintage marketplace — human craft authenticity is the core moat but AI-generated designs are flooding the platform.",
+  "moat": "Etsy's moat is the trust signal of human-made goods and the community of independent creative sellers who have built brand identities, customer reviews, and loyal repeat buyers on the platform. For buyers, Etsy represents an alternative to mass production. For sellers, their shop history and review reputation represent years of accumulated trust that cannot easily move to another platform.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI print-on-demand sellers flooding Etsy listings",
+      "evidence": "Etsy acknowledged in 2024 that a growing portion of its listings were AI-generated designs sold via print-on-demand, diluting the handmade authenticity signal that buyers pay a premium for.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Etsy 2024 annual report", "url": "https://investors.etsy.com/financial-information/annual-reports" },
+    { "id": "s2", "label": "AI listings on Etsy — The Guardian", "url": "https://www.theguardian.com/technology/2023/oct/07/etsy-ai-generated-listings-problem" }
+  ]
+}

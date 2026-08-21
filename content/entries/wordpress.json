@@ -1,0 +1,20 @@
+{
+  "slug": "wordpress",
+  "appName": "WordPress",
+  "threatLevel": "medium",
+  "category": "Content",
+  "summary": "CMS powering 43% of the web — installed base is deeply embedded but AI site builders threaten new user acquisition.",
+  "moat": "WordPress's moat is its installed base: powering 43% of all websites means millions of developers, agencies, and hosting providers have built their businesses on WordPress expertise. The plugin ecosystem with 59,000+ plugins creates switching costs so high that existing WordPress sites almost never migrate. However, new website creation — the acquisition pipeline — is increasingly captured by AI-native builders like Framer AI and Wix ADI that require zero technical knowledge.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI website builders (Framer AI, Wix ADI, Squarespace AI)",
+      "evidence": "Wix ADI and Framer AI can generate a complete, production-ready website from a text description in under 60 seconds, threatening the new-user acquisition funnel that WordPress depends on for ecosystem growth.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "WordPress.org — 43% market share", "url": "https://wordpress.org/about/" },
+    { "id": "s2", "label": "Framer AI site builder", "url": "https://www.framer.com/ai" }
+  ]
+}

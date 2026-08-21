@@ -1,20 +1,30 @@
 import Link from 'next/link';
 import type { Entry } from '@/lib/content/schema';
+import type { CommunityAlternative } from '@/lib/alternatives/types';
 import { Badge } from './Badge';
 import { ThreatBadge } from './ThreatBadge';
+import { VoteWidget } from './VoteWidget';
 import { ChallengerList } from './ChallengerList';
 import { SourcesList } from './SourcesList';
 import { RelatedApps } from './RelatedApps';
+import { CommunityAlternativesRail } from './alternatives/CommunityAlternativesRail';
 
 /**
  * Shared detail template for every entry page (FR-009) — no per-entry layouts.
  * Composes header (category + logo placeholder, name, summary, threat badge),
  * moat with clickable source citation(s) (FR-007), optional challengers
- * (FR-006, FR-018), deduplicated sources (FR-008), and related apps (FR-020).
- * Deliberately omits "Updated X days ago" and "Confidence %" — no date field
- * exists and the confidence score is rejected (Principle I).
+ * (FR-006, FR-018), deduplicated sources (FR-008), community alternatives rail,
+ * and related apps (FR-020).
  */
-export function EntryDetail({ entry, related }: { entry: Entry; related: Entry[] }) {
+export function EntryDetail({
+  entry,
+  related,
+  alternatives = [],
+}: {
+  entry: Entry;
+  related: Entry[];
+  alternatives?: CommunityAlternative[];
+}) {
   const sourceById = new Map(entry.sources.map((s) => [s.id, s]));
   const moatSources = entry.moatSourceIds
     .map((id) => sourceById.get(id))
@@ -70,6 +80,19 @@ export function EntryDetail({ entry, related }: { entry: Entry; related: Entry[]
             >
               {entry.appName[0]}
             </span>
+            <span
+              style={{
+                fontFamily: 'var(--font-mono), monospace',
+                fontSize: '11px',
+                color: 'var(--brand-400)',
+                padding: '2px 8px',
+                background: 'rgba(139, 92, 246, 0.1)',
+                border: '1px solid rgba(139, 92, 246, 0.25)',
+                borderRadius: 'var(--radius-xs)',
+              }}
+            >
+              {alternatives.length} Community Alternative{alternatives.length === 1 ? '' : 's'}
+            </span>
           </div>
           <h1
             style={{
@@ -85,10 +108,12 @@ export function EntryDetail({ entry, related }: { entry: Entry; related: Entry[]
             {entry.summary}
           </p>
           <ThreatBadge level={entry.threatLevel} />
+          <VoteWidget slug={entry.slug} />
         </div>
       </div>
 
       <div className="entry-detail-grid" style={{ gap: 'var(--space-8)' }}>
+        {/* Main Content Column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-8)' }}>
           <section aria-label="Moat">
             <div className="ds-label" style={{ color: 'var(--fg-tertiary)', marginBottom: 'var(--space-3)' }}>
@@ -120,7 +145,15 @@ export function EntryDetail({ entry, related }: { entry: Entry; related: Entry[]
           <SourcesList sources={entry.sources} />
         </div>
 
-        <RelatedApps related={related} />
+        {/* Right Sidebar Column: Community Alternatives + Related Apps */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-8)' }}>
+          <CommunityAlternativesRail
+            targetSlug={entry.slug}
+            targetAppName={entry.appName}
+            alternatives={alternatives}
+          />
+          <RelatedApps related={related} />
+        </div>
       </div>
     </main>
   );

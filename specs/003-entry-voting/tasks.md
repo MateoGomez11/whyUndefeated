@@ -31,12 +31,12 @@ en la raíz del repo, más `supabase/migrations/` (nuevo, SQL versionado — ver
 
 **Purpose**: Dependencia nueva, variables de entorno, y el SQL de la migración versionado en el repo.
 
-- [ ] T001 [P] Agregar `@supabase/supabase-js` a `package.json` (única dependencia nueva del proyecto —
+- [X] T001 [P] Agregar `@supabase/supabase-js` a `package.json` (única dependencia nueva del proyecto —
   ver research.md Decisión 1) y correr `npm install`
-- [ ] T002 [P] Crear `.env.example` (no existe todavía en el repo) con `NEXT_PUBLIC_SUPABASE_URL` y
+- [X] T002 [P] Crear `.env.example` (no existe todavía en el repo) con `NEXT_PUBLIC_SUPABASE_URL` y
   `NEXT_PUBLIC_SUPABASE_ANON_KEY` como placeholders documentados — ya cubierto por `.gitignore`
   (`.env*` con excepción de `.env.example`)
-- [ ] T003 [P] Escribir `supabase/migrations/0001_votes.sql`: tabla `votes` (con `UNIQUE (entry_slug,
+- [X] T003 [P] Escribir `supabase/migrations/0001_votes.sql`: tabla `votes` (con `UNIQUE (entry_slug,
   voter_id)`), políticas RLS (insert/update para `anon`, sin select), y vista `vote_counts` con
   `GRANT SELECT ... TO anon` — contenido exacto en data-model.md
 
@@ -50,22 +50,22 @@ US2 necesitan.
 **⚠️ CRITICAL**: Ninguna historia de usuario puede completarse de verdad hasta que este esquema exista en
 el proyecto Supabase real — aunque los tests automatizados (Jest + Playwright con mocks) no lo requieren.
 
-- [ ] T004 Aplicar `supabase/migrations/0001_votes.sql` contra el proyecto Supabase real, vía las
+- [X] T004 Aplicar `supabase/migrations/0001_votes.sql` contra el proyecto Supabase real, vía las
   herramientas del MCP de Supabase (requiere que la sesión haya recargado el toolset tras la
   autenticación — ver conversación) o, si no está disponible, corriendo el SQL manualmente en el SQL
   Editor del proyecto. Confirmar con una consulta real (no solo "el SQL no dio error") que `votes`,
   `vote_counts` y las políticas RLS existen — quickstart.md Prerrequisito
-- [ ] T005 [P] [TDD] Escribir prueba unitaria en `tests/unit/voterId.test.ts`: dado un `Storage` mockeado
+- [X] T005 [P] [TDD] Escribir prueba unitaria en `tests/unit/voterId.test.ts`: dado un `Storage` mockeado
   vacío, genera y persiste un UUID nuevo; dado un `Storage` que ya tiene uno guardado, lo reutiliza sin
   generar otro — DEBE fallar primero (el módulo no existe)
-- [ ] T006 Implementar `lib/votes/voterId.ts`: `getOrCreateVoterId(storage: Storage): string` — recibe el
+- [X] T006 Implementar `lib/votes/voterId.ts`: `getOrCreateVoterId(storage: Storage): string` — recibe el
   storage inyectado (no accede a `window.localStorage` directamente, para ser testeable sin jsdom) — hace
   pasar T005 (research.md Decisión 5, FR-004)
-- [ ] T007 [P] [TDD] Escribir prueba unitaria en `tests/unit/votes-client.test.ts`: con un cliente de
+- [X] T007 [P] [TDD] Escribir prueba unitaria en `tests/unit/votes-client.test.ts`: con un cliente de
   Supabase mockeado, `fetchVoteCounts` devuelve `{agree, disagree}` a partir de filas de `vote_counts`
   (tratando ausencia de fila como 0) y devuelve `null` ante cualquier error; `castVote` hace upsert con
   `onConflict: 'entry_slug,voter_id'` y devuelve `true`/`false` según éxito — DEBE fallar primero
-- [ ] T008 Implementar `lib/votes/client.ts`: `fetchVoteCounts(supabase, slug)` y
+- [X] T008 Implementar `lib/votes/client.ts`: `fetchVoteCounts(supabase, slug)` y
   `castVote(supabase, slug, voterId, choice)` conforme al contrato de `contracts/votes-api.md` — hace
   pasar T007 (FR-006, FR-011, FR-013)
 
@@ -85,24 +85,26 @@ marcado como activo.
 
 ### Tests for User Story 1 (TDD — escribir primero, deben fallar)
 
-- [ ] T009 [P] [US1] E2E en `e2e/voting.spec.ts` (proyecto `chromium`, con la red de Supabase mockeada
+- [X] T009 [P] [US1] E2E en `e2e/voting.spec.ts` (proyecto `chromium`, con la red de Supabase mockeada
   vía `page.route()` — sin depender de un proyecto real): (a) votar "Agree" en una entrada con 0 votos y
   ver el contador subir a 1 en la UI (SC-001); (b) tras votar "Agree", hacer clic en "Disagree" y ver el
   conteo moverse (Acceptance Scenario 2 de US1, FR-002/FR-003); (c) recargar la página con el mismo
-  `localStorage` y ver que el voto del visitante sigue marcado (FR-004); (d) con JS desactivado (proyecto
-  `no-js`), confirmar que el resto de la página (veredicto, retadores, moat, fuentes, related apps) sigue
-  legible y que el widget de voto simplemente no aparece interactivo (Acceptance Scenario 4, FR-009) —
+  `localStorage` y ver que el voto del visitante sigue marcado (FR-004); (d) verificar que los botones se
+  deshabilitan mientras la petición está en curso para prevenir clics repetidos (FR-010); (e) con JS desactivado
+  (proyecto `no-js`), confirmar que el resto de la página (veredicto, retadores, moat, fuentes, related apps)
+  sigue legible y que el widget de voto simplemente no aparece interactivo (Acceptance Scenario 4, FR-009) —
   DEBE fallar primero (`VoteWidget` no existe)
 
 ### Implementation for User Story 1
 
-- [ ] T010 [US1] Implementar `components/VoteWidget.tsx` (`"use client"` — el ÚNICO del repo): al montar,
+- [X] T010 [US1] Implementar `components/VoteWidget.tsx` (`"use client"` — el ÚNICO del repo): al montar,
   obtiene `voterId` (`lib/votes/voterId.ts` + `window.localStorage`) y llama `fetchVoteCounts`; renderiza
   dos opciones ("Agree"/"Disagree") con conteo visible y resalta la elección actual del visitante si ya
-  votó; al hacer clic, llama `castVote` (upsert) y actualiza el conteo mostrado de forma optimista. Valida
+  votó; al hacer clic, deshabilita los botones mientras la petición está en vuelo (mitigación de abuso / clics
+  rápidos, FR-010), llama `castVote` (upsert) y actualiza el conteo mostrado de forma optimista. Valida
   que `NEXT_PUBLIC_SUPABASE_URL`/`NEXT_PUBLIC_SUPABASE_ANON_KEY` existan antes de crear el cliente —
-  contrato completo (5 estados) en `contracts/votes-api.md` — hace pasar T009 (FR-001, FR-002, FR-003)
-- [ ] T011 [US1] Editar `components/EntryDetail.tsx`: montar `<VoteWidget slug={entry.slug} />`
+  contrato completo (5 estados) en `contracts/votes-api.md` — hace pasar T009 (FR-001, FR-002, FR-003, FR-010)
+- [X] T011 [US1] Editar `components/EntryDetail.tsx`: montar `<VoteWidget slug={entry.slug} />`
   inmediatamente después de `<ThreatBadge level={entry.threatLevel} />`, dentro del mismo contenedor
   `maxWidth: 620` del header — mismo lugar en las 7 entradas, sin excepciones (FR-001, Principio V)
 
@@ -122,7 +124,7 @@ mensaje de no disponible en vez de un error roto o una excepción visible.
 
 ### Tests for User Story 2 (TDD — escribir primero, deben fallar si el guard aún no existe)
 
-- [ ] T012 [P] [US2] Agregar casos en `e2e/voting.spec.ts`: (a) con **todas** las requests a Supabase
+- [X] T012 [P] [US2] Agregar casos en `e2e/voting.spec.ts`: (a) con **todas** las requests a Supabase
   interceptadas para fallar (timeout/5xx), abrir `/entries/{slug}` y verificar que veredicto, retadores,
   moat, fuentes y related apps cargan sin ningún error visible en el contenido principal, y que el widget
   muestra el estado "no disponible" (US2 Acceptance Scenario 1, SC-002); (b) con la lectura de conteos
@@ -134,7 +136,7 @@ mensaje de no disponible en vez de un error roto o una excepción visible.
 
 ### Implementation for User Story 2
 
-- [ ] T013 [US2] Revisar/reforzar `components/VoteWidget.tsx` a partir de los resultados de T012: confirmar
+- [X] T013 [US2] Revisar/reforzar `components/VoteWidget.tsx` a partir de los resultados de T012: confirmar
   que el guard de variables de entorno ausentes entra en el mismo estado "no disponible" que un fallo de
   red (research.md Decisión 9); confirmar que un fallo de `castVote` revierte cualquier actualización
   optimista del conteo (no debe quedar un conteo mostrado que no corresponde a lo realmente guardado —
@@ -148,23 +150,23 @@ mensaje de no disponible en vez de un error roto o una excepción visible.
 
 **Purpose**: Regresión, rendimiento, verificación de seguridad/privacidad, y validación final.
 
-- [ ] T014 [P] Correr la suite completa existente (`npm test` + `npx playwright test --project=chromium
+- [X] T014 [P] Correr la suite completa existente (`npm test` + `npx playwright test --project=chromium
   --project=no-js`) y confirmar que ninguna página/feature previa (`/`, `/methodology`,
   `/entries/[slug]` sin el widget) cambió de comportamiento
-- [ ] T015 [P] Verificar presupuesto de rendimiento con Lighthouse en `/entries/pinterest` (con el widget
+- [X] T015 [P] Verificar presupuesto de rendimiento con Lighthouse en `/entries/pinterest` (con el widget
   de voto ya montado): Performance ≥90, LCP<2.5s, CLS<0.1; medir y reportar el delta real de JS que
   agrega el SDK de Supabase + `VoteWidget` (primera vez que una feature agrega JS más allá del baseline de
   framework — plan.md § Performance Goals)
-- [ ] T016 [P] Confirmar por `grep` que `components/VoteWidget.tsx` es el único archivo del repo con
+- [X] T016 [P] Confirmar por `grep` que `components/VoteWidget.tsx` es el único archivo del repo con
   `"use client"` (Principio III)
-- [ ] T017 [P] Confirmar por `grep`/revisión de código que en ningún lugar del código cliente se referencia
+- [X] T017 [P] Confirmar por `grep`/revisión de código que en ningún lugar del código cliente se referencia
   una service-role key de Supabase — solo la `anon key` pública vía `NEXT_PUBLIC_*` (Principio VI)
-- [ ] T018 Revisión manual del escenario 7 de `quickstart.md` contra el proyecto Supabase real: confirmar
+- [X] T018 Revisión manual del escenario 7 de `quickstart.md` contra el proyecto Supabase real: confirmar
   que `select * from votes` con la `anon key` falla/devuelve vacío por RLS, y que
   `select * from vote_counts` sí funciona (FR-013, SC-007)
-- [ ] T019 [P] Actualizar `README.md` con la sección de configuración de Supabase (variables de entorno,
+- [X] T019 [P] Actualizar `README.md` con la sección de configuración de Supabase (variables de entorno,
   cómo aplicar la migración) siguiendo el mismo formato que el resto del documento
-- [ ] T020 Ejecutar la validación de `quickstart.md` de punta a punta (escenarios 1–7)
+- [X] T020 Ejecutar la validación de `quickstart.md` de punta a punta (escenarios 1–7)
 
 ---
 

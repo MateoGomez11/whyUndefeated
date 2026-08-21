@@ -1,0 +1,20 @@
+{
+  "slug": "substack",
+  "appName": "Substack",
+  "threatLevel": "medium",
+  "category": "Content",
+  "summary": "Newsletter and subscription platform — writer-reader direct relationship is sticky but AI threatens commodity content tiers.",
+  "moat": "Substack's moat is the direct paid subscription relationship between a specific human writer and their audience. When a reader pays for a newsletter, they are paying for a particular person's voice, analysis, and access — not generic information. This parasocial loyalty survives AI disruption at the top tier. The commodity tier of Substack newsletters, however, competes directly with AI-generated summaries and briefings.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI newsletter generators and briefing services",
+      "evidence": "Perplexity's Daily Briefing and AI-powered newsletter aggregators can auto-generate curated industry summaries, threatening mid-tier substacks that compete on curation rather than original voice.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Substack 3 million paid subscriptions milestone", "url": "https://on.substack.com/p/substack-hits-3-million-paid-subscriptions" },
+    { "id": "s2", "label": "Perplexity Daily Briefing feature", "url": "https://www.perplexity.ai/hub/blog/perplexity-daily-briefing" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "yelp",
+  "appName": "Yelp",
+  "threatLevel": "high",
+  "category": "Community",
+  "summary": "Local business review platform squeezed between Google Maps below and AI answer engines above stealing its traffic.",
+  "moat": "Yelp's moat is its 265 million cumulative user reviews and a trusted Elite reviewer community that has built local credibility over two decades. The depth of reviews for niche restaurants and service businesses goes beyond what AI can fabricate. However, Yelp depends almost entirely on Google search traffic for discovery, which is being eroded by AI Overviews that answer local queries without a click.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Google AI Overviews for local search",
+      "evidence": "Google AI Overviews now synthesize local business recommendations directly in search results, with Yelp reporting a measurable decline in referral traffic after the AI Overviews rollout in May 2024.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Yelp Q3 2024 financial results", "url": "https://www.yelp-ir.com/news-releases/news-release-details/yelp-reports-third-quarter-2024-financial-results" },
+    { "id": "s2", "label": "Google AI Overviews impact on publishers — Search Engine Land", "url": "https://searchengineland.com/google-ai-overviews-impact-on-traffic-443343" }
+  ]
+}

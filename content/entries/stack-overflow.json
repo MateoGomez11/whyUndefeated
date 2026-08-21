@@ -1,0 +1,27 @@
+{
+  "slug": "stack-overflow",
+  "appName": "Stack Overflow",
+  "threatLevel": "high",
+  "category": "Community",
+  "summary": "The programmer's Q&A archive — heavily pressured by AI coding assistants answering queries directly inside IDEs.",
+  "moat": "Stack Overflow holds millions of indexed canonical programming edge cases and peer-reviewed reputation scores, though AI IDE plugins like Copilot and Claude Code intercept questions before developers visit the browser.",
+  "moatSourceIds": ["s1", "s2"],
+  "challengers": [
+    {
+      "name": "GitHub Copilot & Cursor",
+      "evidence": "Over 1.8M paid developers getting context-aware debugging solutions in their editor without searching the web.",
+      "sourceId": "s3"
+    },
+    {
+      "name": "Claude Code & ChatGPT Canvas",
+      "evidence": "Direct terminal and chat code explanations that resolve multi-file bugs in one turn.",
+      "sourceId": "s4"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Stack Overflow Annual Developer Survey 2024", "url": "https://survey.stackoverflow.co/2024" },
+    { "id": "s2", "label": "Prosus Annual Report — Stack Overflow Operations", "url": "https://www.prosus.com" },
+    { "id": "s3", "label": "GitHub Copilot Enterprise Metrics", "url": "https://github.blog" },
+    { "id": "s4", "label": "Anthropic Claude Code Overview", "url": "https://anthropic.com" }
+  ]
+}

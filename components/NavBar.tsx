@@ -1,16 +1,11 @@
 import Link from 'next/link';
 
-// Static nav — mirrors design-reference NavBar.jsx. Only "Home" routes today;
-// the other destinations don't exist yet, so they point to "#" (no active routing
-// logic). No client JS: the mobile menu is a pure-CSS checkbox/label toggle
-// (NFR-004) — the checkbox is visually hidden but stays keyboard-focusable
-// (see .nav-toggle-checkbox in globals.css), so it works identically with or
-// without JavaScript.
 const LINKS: { label: string; href: string }[] = [
   { label: 'Home', href: '/' },
-  { label: 'Leaderboard', href: '#' },
+  { label: 'Alternatives', href: '/alternatives' },
   { label: 'Methodology', href: '/methodology' },
-  { label: 'Submit', href: '#' },
+  { label: 'Sponsors', href: '/sponsor' },
+  { label: 'Submit', href: '/submit' },
 ];
 
 export function NavBar({ active = 'Home' }: { active?: string }) {
@@ -33,6 +28,7 @@ export function NavBar({ active = 'Home' }: { active?: string }) {
           fontWeight: 700,
           fontSize: 'var(--text-h3)',
           color: 'var(--fg-primary)',
+          textDecoration: 'none',
         }}
       >
         why<span style={{ color: 'var(--brand-500)' }}>undefeated</span>
@@ -52,17 +48,18 @@ export function NavBar({ active = 'Home' }: { active?: string }) {
 
       <div className="nav-links" style={{ display: 'flex', gap: 'var(--space-6)' }}>
         {LINKS.map((l) => (
-          <a
+          <Link
             key={l.label}
             href={l.href}
             style={{
               fontFamily: 'var(--font-mono), monospace',
               fontSize: 'var(--text-sm)',
-              color: l.label === active ? 'var(--brand-400)' : 'var(--fg-secondary)',
+              color: l.label === active ? 'var(--fg-primary)' : 'var(--fg-secondary)',
+              textDecoration: 'none',
             }}
           >
             {l.label}
-          </a>
+          </Link>
         ))}
       </div>
     </nav>

@@ -1,0 +1,20 @@
+{
+  "slug": "airbnb",
+  "appName": "Airbnb",
+  "threatLevel": "low",
+  "category": "Community",
+  "summary": "Peer-to-peer accommodation network — host-guest trust infrastructure and inventory breadth create a durable marketplace moat.",
+  "moat": "Airbnb's moat is its double-sided marketplace with 7 million+ active listings tied to host identities with verified review histories accumulated over years. A host's Superhost status and review portfolio represent real-world reputation capital that cannot be instantly created or migrated. The trust infrastructure — verified profiles, payment escrow, host insurance — took a decade to build and is deeply embedded in global travel booking.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI travel planning assistants with direct booking",
+      "evidence": "Google's travel AI and startups like Layla and Mindtrip can plan and recommend accommodations using AI, potentially abstracting Airbnb's discovery layer behind an AI interface that selects listings autonomously.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Airbnb Q4 2024 earnings", "url": "https://investors.airbnb.com/news-and-events/news/press-release-details/2025/Airbnb-Q4-2024-Earnings/" },
+    { "id": "s2", "label": "Layla AI travel planner — TechCrunch", "url": "https://techcrunch.com/2024/09/10/layla-the-ai-travel-planner/" }
+  ]
+}

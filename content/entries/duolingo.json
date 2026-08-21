@@ -1,0 +1,21 @@
+{
+  "slug": "duolingo",
+  "appName": "Duolingo",
+  "threatLevel": "low",
+  "category": "Community",
+  "summary": "Language learning gamified — where habit-forming daily streaks and mascot culture beat raw LLM translation capability.",
+  "moat": "While AI tutors speak fluent language, Duolingo's moat is dopamine engineering: over 30 million daily active users learn not because it is the smartest teacher, but because streaks, leagues, and push notifications keep them showing up every day.",
+  "moatSourceIds": ["s1", "s2"],
+  "challengers": [
+    {
+      "name": "ChatGPT Voice Mode & TalkPal AI",
+      "evidence": "Low-latency conversational voice bots allow free-flowing spoken language practice with native accent feedback.",
+      "sourceId": "s3"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Duolingo Q4 2024 Shareholder Letter", "url": "https://investors.duolingo.com" },
+    { "id": "s2", "label": "Duolingo Method & Gamification Study", "url": "https://blog.duolingo.com" },
+    { "id": "s3", "label": "OpenAI Advanced Voice Mode Release", "url": "https://openai.com" }
+  ]
+}

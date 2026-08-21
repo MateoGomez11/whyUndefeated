@@ -90,7 +90,7 @@ test.describe('Methodology page (US1)', () => {
 test.describe('Methodology page reachable from the nav (US2)', () => {
   test('clicking "Methodology" in the header from home navigates to /methodology (no 404)', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('link', { name: 'Methodology' }).click();
+    await page.getByRole('navigation').getByRole('link', { name: 'Methodology' }).click();
     await expect(page).toHaveURL(/\/methodology$/);
     // A real 404 would render app/not-found.tsx instead of this region — proves it's not a dead link.
     await expect(page.getByRole('region', { name: 'Threat Tiers' })).toBeVisible();
@@ -101,7 +101,7 @@ test.describe('Methodology page reachable from the nav (US2)', () => {
     page,
   }) => {
     await page.goto('/entries/pinterest');
-    await page.getByRole('link', { name: 'Methodology' }).click();
+    await page.getByRole('navigation').getByRole('link', { name: 'Methodology' }).click();
     await expect(page).toHaveURL(/\/methodology$/);
   });
 });

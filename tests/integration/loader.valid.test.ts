@@ -2,21 +2,52 @@ import { loadAllEntries } from '@/lib/content/loader';
 import { CATEGORIES, THREAT_LEVELS } from '@/lib/content/schema';
 
 const EXPECTED_SLUGS = [
+  'airbnb',
+  'behance',
+  'canva',
+  'coursera',
+  'deviantart',
+  'discord',
+  'duolingo',
+  'ebay',
+  'etsy',
+  'facebook',
+  'figma',
+  'github',
   'goodreads',
+  'google-maps',
+  'instagram',
   'linkedin',
+  'medium',
+  'notion',
+  'patreon',
   'pinterest',
+  'quora',
   'reddit',
+  'spotify',
+  'stack-overflow',
+  'substack',
+  'telegram',
   'tiktok',
+  'tripadvisor',
+  'twitch',
   'twitter-x',
+  'uber',
+  'udemy',
+  'whatsapp',
   'wikipedia',
+  'wordpress',
+  'yelp',
+  'youtube',
 ];
 
 describe('loadAllEntries over the real seed content (FR-012, SC-009)', () => {
   const entries = loadAllEntries();
 
-  it('loads exactly the 7 seed entries', () => {
+  it('loads all entries correctly', () => {
     const slugs = entries.map((e) => e.slug).sort();
     expect(slugs).toEqual(EXPECTED_SLUGS);
+    expect(slugs.length).toBe(37);
   });
 
   it('gives every entry a valid category and threat level', () => {
@@ -26,11 +57,9 @@ describe('loadAllEntries over the real seed content (FR-012, SC-009)', () => {
     }
   });
 
-  it('returns entries ordered by threat level high -> low', () => {
-    const weight = { high: 3, medium: 2, low: 1 } as const;
-    const weights = entries.map((e) => weight[e.threatLevel]);
-    const sorted = [...weights].sort((a, b) => b - a);
-    expect(weights).toEqual(sorted);
+  it('returns entries alternating across threat levels (high -> medium -> low)', () => {
+    const levels = entries.map((e) => e.threatLevel);
+    expect(levels.slice(0, 3)).toEqual(['high', 'medium', 'low']);
   });
 
   it('ensures every challenger and moat citation references an existing source', () => {

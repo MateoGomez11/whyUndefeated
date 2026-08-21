@@ -1,0 +1,27 @@
+{
+  "slug": "notion",
+  "appName": "Notion",
+  "threatLevel": "medium",
+  "category": "Knowledge",
+  "summary": "The connected workspace for docs and databases — defended by team inertia and deeply nested relational workflows.",
+  "moat": "Notion's primary defense is organizational lock-in: entire companies build their operating systems on relational databases, interconnected wikis, and team permissions that AI agents cannot easily clone or migrate without human coordination.",
+  "moatSourceIds": ["s1", "s2"],
+  "challengers": [
+    {
+      "name": "Cursor & AI Workspace Agents",
+      "evidence": "Modern AI dev environments and chat agents now generate structured documentation and markdown files directly within local codebases.",
+      "sourceId": "s3"
+    },
+    {
+      "name": "Affine & Open-Source Local Docs",
+      "evidence": "Local-first, open-source AI workspaces offering offline-ready visual canvases and vector search.",
+      "sourceId": "s4"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Notion 2024 Product Keynote", "url": "https://www.notion.so/blog/category/product" },
+    { "id": "s2", "label": "Gartner Team Collaboration Workspaces Report", "url": "https://www.gartner.com/en/information-technology" },
+    { "id": "s3", "label": "Cursor AI Documentation Features", "url": "https://cursor.com" },
+    { "id": "s4", "label": "Affine Privacy & Local-First Architecture", "url": "https://affine.pro" }
+  ]
+}

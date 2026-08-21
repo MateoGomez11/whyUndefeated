@@ -1,0 +1,21 @@
+{
+  "slug": "spotify",
+  "appName": "Spotify",
+  "threatLevel": "low",
+  "category": "Content",
+  "summary": "The streaming audio giant — protected by major record label copyright moats and decades of user playlist graphs.",
+  "moat": "AI can generate endless synthetic music, but Spotify holds exclusive licensing agreements with the big three record labels alongside billions of user-curated playlist graphs and social listening graphs.",
+  "moatSourceIds": ["s1", "s2"],
+  "challengers": [
+    {
+      "name": "Suno & Udio Generative Audio",
+      "evidence": "AI music generators capable of producing full studio-quality songs with vocals from a simple text prompt in seconds.",
+      "sourceId": "s3"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Spotify 2024 Annual SEC Filing", "url": "https://investors.spotify.com" },
+    { "id": "s2", "label": "RIAA Year-End Music Industry Revenue Report", "url": "https://www.riaa.com" },
+    { "id": "s3", "label": "Suno AI Music Generation Model Launch", "url": "https://suno.com" }
+  ]
+}

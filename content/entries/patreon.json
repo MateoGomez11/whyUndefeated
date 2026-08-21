@@ -1,0 +1,20 @@
+{
+  "slug": "patreon",
+  "appName": "Patreon",
+  "threatLevel": "low",
+  "category": "Community",
+  "summary": "Creator fan-funding platform with direct patron relationship — AI cannot replace the human connection fans pay for.",
+  "moat": "Patreon's moat is the direct financial and emotional bond between creators and their most loyal fans. Patrons pay to support a specific human's creative work, access exclusive community spaces, and feel a sense of participation in the creator's journey. This patronage relationship is fundamentally about human connection and identity — not content consumption — making AI substitution structurally difficult at the core value layer.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI virtual creators and synthetic fan experiences",
+      "evidence": "AI virtual influencers like Lil Miquela have amassed millions of followers and secured brand deals, representing an early signal of synthetic creators competing for patron-style fan funding.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Patreon — about the platform", "url": "https://www.patreon.com/about" },
+    { "id": "s2", "label": "Virtual influencer industry 2024 — Business Insider", "url": "https://www.businessinsider.com/virtual-influencers-ai-creators-brand-deals-2024" }
+  ]
+}

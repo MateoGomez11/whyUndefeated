@@ -1,0 +1,21 @@
+{
+  "slug": "figma",
+  "appName": "Figma",
+  "threatLevel": "low",
+  "category": "Content",
+  "summary": "The collaborative interface canvas — anchored by multiplayer WebGL rendering, design systems, and developer handoff pipelines.",
+  "moat": "Figma is shielded by its high-performance WebAssembly rendering engine, complex corporate component libraries, and live multiplayer collaboration across product, engineering, and design teams.",
+  "moatSourceIds": ["s1", "s2"],
+  "challengers": [
+    {
+      "name": "v0.dev & Bolt.new",
+      "evidence": "Prompt-to-code generative engines allowing developers to skip interface mockups entirely and generate React components in real time.",
+      "sourceId": "s3"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Figma Config Keynote & Design Systems", "url": "https://www.figma.com/blog" },
+    { "id": "s2", "label": "WebAssembly in Production at Figma", "url": "https://www.figma.com/blog/webassembly-in-production-at-figma" },
+    { "id": "s3", "label": "Vercel v0 Generative UI Architecture", "url": "https://v0.dev" }
+  ]
+}

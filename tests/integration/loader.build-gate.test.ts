@@ -29,6 +29,6 @@ describe('build gate (US3)', () => {
 
   it('the real content/entries directory (default) completes without error', () => {
     expect(() => loadAllEntries()).not.toThrow();
-    expect(loadAllEntries()).toHaveLength(7);
+    expect(loadAllEntries().length).toBeGreaterThanOrEqual(7);
   });
 });

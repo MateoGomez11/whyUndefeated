@@ -1,0 +1,20 @@
+{
+  "slug": "uber",
+  "appName": "Uber",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "Ride-hailing marketplace with supply-demand network moat — autonomous vehicles could reinvent or destroy its driver-mediated model.",
+  "moat": "Uber's moat is its marketplace liquidity: in most major cities, Uber's density of active drivers means wait times under 3 minutes — a standard no smaller rival can match without the driver supply. Its 150+ million active riders represent a demand side sticky through integration with Apple Pay, Google Pay, and corporate travel programs. The platform also benefits from Uber Eats cross-subsidizing driver supply during off-peak hours.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Waymo autonomous ride-hailing",
+      "evidence": "Waymo completed over 1 million paid driverless rides by early 2024 in San Francisco and Phoenix, demonstrating that autonomous ride-hailing is commercially viable and directly threatens Uber's driver-mediated model.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Uber Q4 2024 earnings", "url": "https://investor.uber.com/news-releases/news-release-details/uber-announces-results-fourth-quarter-and-full-year-2024/" },
+    { "id": "s2", "label": "Waymo 1 million paid rides milestone", "url": "https://waymo.com/blog/2024/02/waymo-1-million-trips" }
+  ]
+}

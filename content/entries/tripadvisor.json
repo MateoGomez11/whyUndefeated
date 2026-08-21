@@ -1,0 +1,20 @@
+{
+  "slug": "tripadvisor",
+  "appName": "TripAdvisor",
+  "threatLevel": "high",
+  "category": "Community",
+  "summary": "Travel review giant losing ground to AI trip planners that synthesize full itineraries without a click.",
+  "moat": "TripAdvisor holds over 1 billion reviews covering 8 million accommodations, restaurants, and attractions — a corpus of human travel experience built over 25 years. Its traveler photos and forum threads provide nuanced firsthand knowledge. The threat is structural: AI travel planners like Gemini and ChatGPT synthesize this accumulated knowledge into instant itineraries, bypassing TripAdvisor as the interface.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Google Gemini and AI travel planning assistants",
+      "evidence": "Google's Gemini can generate full multi-day travel itineraries with hotel recommendations, restaurant picks, and budget estimates in seconds, directly intercepting TripAdvisor's core discovery use case.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "TripAdvisor 2024 annual report", "url": "https://ir.tripadvisor.com/annual-reports" },
+    { "id": "s2", "label": "Google Gemini travel planning", "url": "https://blog.google/products/gemini/google-gemini-travel-planning/" }
+  ]
+}

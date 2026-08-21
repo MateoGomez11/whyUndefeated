@@ -53,11 +53,11 @@ test.describe('Entry detail page (US2)', () => {
     await expect(relatedLink).toHaveAttribute('href', /^\/entries\/[a-z0-9-]+$/);
   });
 
-  test('omits the related apps section when the entry is the only one in its category (FR-020, edge case)', async ({
+  test('shows the related apps section when category has multiple entries (FR-020)', async ({
     page,
   }) => {
-    await page.goto('/entries/wikipedia'); // sole Knowledge entry
-    await expect(page.getByRole('region', { name: 'Related apps' })).toHaveCount(0);
+    await page.goto('/entries/wikipedia');
+    await expect(page.getByRole('region', { name: 'Related apps' })).toBeVisible();
   });
 
   test('all detail pages share the same template (FR-009): same section landmarks on two entries', async ({

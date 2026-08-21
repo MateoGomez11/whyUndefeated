@@ -1,0 +1,20 @@
+{
+  "slug": "instagram",
+  "appName": "Instagram",
+  "threatLevel": "medium",
+  "category": "Social",
+  "summary": "Meta's photo and video network — strong social graph but Reels competes directly with AI-generated visual content.",
+  "moat": "Instagram's moat is the social graph of personal relationships built over 15 years and integrated into Meta's identity infrastructure. Its creator economy tools and direct-messaging fabric are sticky across demographics. However, the Reels feed competes head-to-head with AI-generated imagery and video, and its discovery mechanism rewards novelty over authentic connection.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI image generators (Midjourney, DALL-E, Adobe Firefly)",
+      "evidence": "Midjourney processed over 15 billion image generations by 2024, with many creators choosing AI-generated visuals over photo shoots for brand content on Instagram.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Meta Q4 2024 earnings — Instagram", "url": "https://investor.fb.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/" },
+    { "id": "s2", "label": "Midjourney usage milestones — TechCrunch", "url": "https://techcrunch.com/2024/03/04/midjourney-ai-image-generator-reaches-15-million-users/" }
+  ]
+}

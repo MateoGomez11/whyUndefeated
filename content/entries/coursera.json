@@ -1,0 +1,20 @@
+{
+  "slug": "coursera",
+  "appName": "Coursera",
+  "threatLevel": "high",
+  "category": "Knowledge",
+  "summary": "University-backed online learning — credentials retain value but AI tutors outperform passive video lectures on learning efficiency.",
+  "moat": "Coursera's primary moat is its accreditation partnerships with top universities: Stanford, Google, IBM, and Michigan lend institutional credibility to certificates that carry weight in hiring. This credential-granting authority is not easily replicated by AI. However, the core pedagogy — watching pre-recorded video lectures — is increasingly inferior to personalized AI tutoring that adapts to a learner's specific gaps in real time.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Khanmigo and AI personalized tutors",
+      "evidence": "Khan Academy's Khanmigo AI tutor provides Socratic, personalized instruction across every subject for free, directly substituting the instructional value of recorded lecture courses on platforms like Coursera.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Coursera 2024 annual report", "url": "https://investor.coursera.com/financial-information/annual-reports" },
+    { "id": "s2", "label": "Khan Academy Khanmigo AI tutor", "url": "https://www.khanacademy.org/khan-labs" }
+  ]
+}

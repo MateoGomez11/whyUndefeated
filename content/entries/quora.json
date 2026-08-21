@@ -1,0 +1,20 @@
+{
+  "slug": "quora",
+  "appName": "Quora",
+  "threatLevel": "high",
+  "category": "Knowledge",
+  "summary": "Q&A platform losing its core use case to AI that answers the same questions better, faster, and for free.",
+  "moat": "Quora's historical moat was a corpus of high-quality expert answers accumulated over 15 years, with strong Google SEO that channeled search traffic into its question-answer format. Its Poe AI platform represents a pivot attempt. The core threat is existential: the primary reason anyone visited Quora — to get a good answer to a question — is now handled better by ChatGPT and Perplexity.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "ChatGPT and Perplexity AI",
+      "evidence": "Perplexity AI reached 100 million monthly users by early 2025, providing cited, real-time answers to the exact query types that drove the majority of Quora's search traffic.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Quora blog — Poe AI platform", "url": "https://quorablog.quora.com/Poe" },
+    { "id": "s2", "label": "Perplexity AI 100 million monthly users — TechCrunch", "url": "https://techcrunch.com/2025/01/23/perplexity-passes-100-million-monthly-active-users/" }
+  ]
+}

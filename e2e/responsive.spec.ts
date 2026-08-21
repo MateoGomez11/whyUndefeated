@@ -86,7 +86,7 @@ test.describe('Responsive layout (NFR-001–NFR-005)', () => {
 
       await toggle.click();
       await expect(navLinks).toBeVisible();
-      await expect(navLinks.getByText('Leaderboard')).toBeVisible();
+      await expect(navLinks.getByText('Alternatives')).toBeVisible();
     });
 
     test('nav toggle works via keyboard alone, proving it needs no JavaScript (NFR-004)', async ({ page }) => {

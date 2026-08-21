@@ -23,13 +23,16 @@ describe('threatWeight', () => {
 });
 
 describe('sortEntries', () => {
-  it('orders by threat level high -> low (FR-002)', () => {
+  it('alternates threat levels in round-robin fashion (high -> medium -> low)', () => {
     const sorted = sortEntries([
-      entry('a', 'A', 'low'),
-      entry('b', 'B', 'high'),
-      entry('c', 'C', 'medium'),
+      entry('l1', 'Low 1', 'low'),
+      entry('l2', 'Low 2', 'low'),
+      entry('h1', 'High 1', 'high'),
+      entry('h2', 'High 2', 'high'),
+      entry('m1', 'Medium 1', 'medium'),
+      entry('m2', 'Medium 2', 'medium'),
     ]);
-    expect(sorted.map((e) => e.threatLevel)).toEqual(['high', 'medium', 'low']);
+    expect(sorted.map((e) => e.threatLevel)).toEqual(['high', 'medium', 'low', 'high', 'medium', 'low']);
   });
 
   it('breaks ties alphabetically by appName (ascending)', () => {

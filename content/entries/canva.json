@@ -1,0 +1,20 @@
+{
+  "slug": "canva",
+  "appName": "Canva",
+  "threatLevel": "medium",
+  "category": "Content",
+  "summary": "Design platform with 185M users — Brand Kit team lock-in is sticky but AI image generation competes heavily on output quality.",
+  "moat": "Canva's moat is its team collaboration infrastructure and Brand Kit system: organizations store their fonts, colors, logos, and templates inside Canva, making it the single source of brand truth for marketing teams globally. With 85% of Fortune 500 companies using Canva for Teams, the switching cost involves recreating brand kits and re-training teams. Its 185 million user base also drives a powerful network of shared template remixing.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "Adobe Firefly and professional AI design tools",
+      "evidence": "Adobe Firefly generated 9 billion images in its first year and is integrated into Photoshop and Illustrator, giving professional designers AI image superpowers inside tools that outclass Canva for complex creative work.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Canva 185 million users announcement", "url": "https://www.canva.com/newsroom/news/canva-raises-200-million/" },
+    { "id": "s2", "label": "Adobe Firefly 9 billion images milestone", "url": "https://blog.adobe.com/en/publish/2024/03/18/adobe-firefly-reaches-9-billion-generations" }
+  ]
+}

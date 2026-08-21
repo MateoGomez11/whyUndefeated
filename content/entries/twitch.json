@@ -1,0 +1,20 @@
+{
+  "slug": "twitch",
+  "appName": "Twitch",
+  "threatLevel": "low",
+  "category": "Social",
+  "summary": "Live streaming platform where real-time human interaction and parasocial community are the product — AI cannot stream live.",
+  "moat": "Twitch's moat is live, unscripted human performance combined with real-time chat community. Viewers do not come to watch a finished video — they come to participate in a shared moment with a specific streamer and a community of regulars. This live social contract, with inside jokes, community norms, and streamer-viewer relationships built over years, creates loyalty that is structurally resistant to AI substitution.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI virtual streamers (VTubers with AI backends)",
+      "evidence": "AI-powered virtual streamers are emerging in Japan and Korea, using LLMs to power interactive virtual characters that stream 24/7, testing whether parasocial bonds can transfer to non-human streamers.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "Twitch 2024 platform statistics", "url": "https://twitchtracker.com/statistics" },
+    { "id": "s2", "label": "AI VTuber virtual streamers — The Verge", "url": "https://www.theverge.com/2023/11/2/23941524/ai-vtuber-virtual-streamer" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "ebay",
+  "appName": "eBay",
+  "threatLevel": "medium",
+  "category": "Community",
+  "summary": "Auction and resale marketplace with 30 years of seller reputation depth — collectibles and rare goods remain a strong niche.",
+  "moat": "eBay's moat is its 30-year accumulated buyer-seller reputation infrastructure: seller feedback scores and transaction histories are the primary currency of the marketplace. For rare collectibles, vintage items, and unique goods, eBay remains the dominant price discovery mechanism because it aggregates the most liquid market of specialized buyers worldwide. AI cannot replicate the authenticity verification and expert community knowledge embedded in high-stakes collectible categories.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI price comparison engines and alternative marketplaces",
+      "evidence": "eBay itself launched AI-powered listing generation in 2024 that auto-completes item descriptions from photos, while AI price comparison tools allow buyers to find identical goods on rival platforms at lower prices.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "eBay 2024 annual report", "url": "https://investors.ebayinc.com/financial-information/annual-reports/" },
+    { "id": "s2", "label": "eBay AI listing tools announcement", "url": "https://www.ebayinc.com/stories/news/ebay-launches-magical-listing-tool-powered-by-ai/" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "deviantart",
+  "appName": "DeviantArt",
+  "threatLevel": "medium",
+  "category": "Community",
+  "summary": "Art community platform facing an identity crisis as AI-generated images flood what was a human creativity sanctuary.",
+  "moat": "DeviantArt's moat is its 25-year community of artists who have built identities, follower bases, and creative reputations on the platform. For many digital artists, their DeviantArt gallery is their creative resume. The comment culture, critique traditions, and mentorship networks embedded in the community represent social capital that does not migrate easily.",
+  "moatSourceIds": ["s1"],
+  "challengers": [
+    {
+      "name": "AI image generators on DeviantArt's own platform",
+      "evidence": "DeviantArt's DreamUp AI tool launch in 2022 triggered a mass artist protest, arguing AI-generated images trained on their work without consent were being normalized on the platform.",
+      "sourceId": "s2"
+    }
+  ],
+  "sources": [
+    { "id": "s1", "label": "DeviantArt — about the platform", "url": "https://www.deviantart.com/about" },
+    { "id": "s2", "label": "DeviantArt DreamUp AI controversy — The Verge", "url": "https://www.theverge.com/2022/11/11/23453741/deviantart-dreamup-ai-art-generator-controversy" }
+  ]
+}
