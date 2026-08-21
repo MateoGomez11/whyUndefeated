@@ -7,6 +7,8 @@ import { Footer } from '@/components/Footer';
 import { VerifiedStackDock } from '@/components/sponsor/VerifiedStackDock';
 import { SPONSOR_SLOTS, SPONSOR_METRICS } from '@/lib/sponsor/data';
 
+import { Analytics } from '@vercel/analytics/next';
+
 // Self-hosted via next/font (no runtime @import) — plan.md design deviation.
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -81,6 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           slots={SPONSOR_SLOTS}
           priceWeeklyUsd={SPONSOR_METRICS.priceWeeklyUsd}
         />
+        <Analytics />
       </body>
     </html>
   );
