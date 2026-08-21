@@ -1,32 +1,41 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import type { CommunityAlternative } from '@/lib/alternatives/types';
 import { AlternativeCard } from './AlternativeCard';
-
 import { sortAlternatives } from '@/lib/alternatives/sort';
+import { fetchApprovedAlternatives } from '@/lib/alternatives/client';
 
 export function AlternativesGrid({
   initialAlternatives = [],
 }: {
   initialAlternatives: CommunityAlternative[];
 }) {
+  const [alternativesList, setAlternativesList] = useState<CommunityAlternative[]>(initialAlternatives);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
+
+  useEffect(() => {
+    fetchApprovedAlternatives().then((data) => {
+      if (data && data.length > 0) {
+        setAlternativesList(data);
+      }
+    });
+  }, []);
 
   // Extract unique targets
   const targetFilterOptions = useMemo(() => {
     const targets = new Set<string>();
-    initialAlternatives.forEach((alt) => {
+    alternativesList.forEach((alt) => {
       if (alt.target_slug) targets.add(alt.target_slug);
       else targets.add('general');
     });
     return ['all', ...Array.from(targets)];
-  }, [initialAlternatives]);
+  }, [alternativesList]);
 
   const filteredAlternatives = useMemo(() => {
-    const filtered = initialAlternatives.filter((alt) => {
+    const filtered = alternativesList.filter((alt) => {
       const matchesSearch =
         searchQuery === '' ||
         alt.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -42,7 +51,7 @@ export function AlternativesGrid({
     });
 
     return sortAlternatives(filtered);
-  }, [initialAlternatives, searchQuery, selectedFilter]);
+  }, [alternativesList, searchQuery, selectedFilter]);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>

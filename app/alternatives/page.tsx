@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import { fetchAllAlternatives } from '@/lib/alternatives/client';
 import { AlternativesGrid } from '@/components/alternatives/AlternativesGrid';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: 'Community Alternatives & AI Challengers — WhyUndefeated',
   description:

@@ -1,19 +1,30 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { CommunityAlternative } from '@/lib/alternatives/types';
 import { AlternativeVoteButton } from './AlternativeVoteButton';
-
 import { sortAlternatives } from '@/lib/alternatives/sort';
+import { fetchAlternativesForSlug } from '@/lib/alternatives/client';
 
 export function CommunityAlternativesRail({
   targetSlug,
   targetAppName,
-  alternatives = [],
+  alternatives: initialAlternatives = [],
 }: {
   targetSlug: string;
   targetAppName: string;
   alternatives: CommunityAlternative[];
 }) {
-  const sortedAlternatives = sortAlternatives(alternatives);
+  const [altList, setAltList] = useState<CommunityAlternative[]>(initialAlternatives);
+
+  useEffect(() => {
+    fetchAlternativesForSlug(targetSlug).then((data) => {
+      if (data) setAltList(data);
+    });
+  }, [targetSlug]);
+
+  const sortedAlternatives = sortAlternatives(altList);
   return (
     <aside
       style={{
