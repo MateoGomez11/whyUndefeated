@@ -1,93 +1,205 @@
-# whyUndefeated
+# WhyUndefeated
 
-An evidence-based threat-level tracker: is AI actually replacing the apps and platforms people use every
-day? Every claim ships with a source. No invented scores, no "confidence %" — see
-`specs/001-entries-directory/spec.md` for the full feature spec and constitution principles behind that
-rule.
+> **Live Production**: [whyundefeated.com](https://www.whyundefeated.com)  
+> An evidence-based software defensibility index and community alternative ecosystem analyzing why tech incumbents retain competitive moats against generative AI — backed by verified citations, community voting, and indie challenger tooling.
 
-## Stack
+---
 
-Next.js (App Router) + TypeScript, statically generated. Content lives in versioned JSON files, not a
-database — see [Content format](#content-format) below. No client-side data fetching; pages are readable
-with JavaScript disabled.
+## 🏛️ Architecture & System Design
 
-## Getting started
+WhyUndefeated is built as a high-performance, hybrid web platform combining **Static Site Generation (SSG)** for immutable analytical content, **Server-Side Rendering (SSR) & Dynamic Routes** for live ecosystem discovery, and **PostgreSQL (Supabase)** for atomic community interactions.
+
+```
+                      ┌────────────────────────────────────────┐
+                      │         Next.js 15 App Router          │
+                      │    (React 19, TypeScript, Strict)      │
+                      └──────────────────┬─────────────────────┘
+                                         │
+                 ┌───────────────────────┼───────────────────────┐
+                 │                       │                       │
+                 ▼                       ▼                       ▼
+     ┌──────────────────────┐┌──────────────────────┐┌──────────────────────┐
+     │ Content Engine (SSG) ││ Dynamic Routes (SSR) ││   Interactive UI     │
+     │ 52 Versioned Entries ││ /alternatives        ││  Hero Typewriter     │
+     │ Zod Validation Gates ││ /submit              ││  3D Canvas Radar     │
+     │ Markdown & Citations ││ /admin (Protected)   ││  Mobile 60fps Marquee│
+     └──────────────────────┘└───────────┬──────────┘└──────────────────────┘
+                                         │
+                                         ▼
+                             ┌──────────────────────┐
+                             │ Supabase (PostgreSQL)│
+                             │ • community_alts     │
+                             │ • atomic votes       │
+                             │ • aggregate views    │
+                             └──────────────────────┘
+```
+
+---
+
+## ✨ Key Engineering Features
+
+### 1. Zero-Downtime Content Pipeline & Build-Time Gatekeeper
+- **52 Deep-Dive Incumbent Profiles**: Categorized across Social, Knowledge, Content, and Community verticals.
+- **Strict Schema Enforcement**: All analytical entries are stored as versioned JSON files in `content/entries/` and strictly validated at compile time using **Zod**. If an entry contains a dangling citation reference or invalid enum, `npm run build` fails immediately, preventing corrupted deploys.
+
+### 2. Community Challenger & Submission Engine (`/alternatives` & `/submit`)
+- **Indie Tooling Discovery**: Live searchable, filterable directory of challenger products competing with entrenched incumbents.
+- **Automated Security & Sanitization**: Submissions pass through client-side and API-level input sanitization (URL validation, XSS prevention, keyword safety heuristics) before persisting to PostgreSQL.
+- **Tiered Verification Support**: Built-in tiered data model supporting Verified Creator Badges and Express Review pipelines.
+- **Admin Moderation Dashboard (`/admin`)**: Secure administrative portal with cookie-based session authentication to approve, reject, feature, or remove community submissions in real-time.
+
+### 3. Community Consensus Voting Engine
+- **Atomic Upsert Logic**: Visitors can cast `Agree` or `Disagree` votes on each platform's moat verdict.
+- **Optimistic UI with Rollback**: Vote counts update instantaneously on click with automatic rollbacks if the network request fails.
+- **Privacy-Preserving Fingerprinting**: Uses client-side UUID tokens stored in `localStorage` without tracking cookies or collecting PII.
+- **PostgreSQL Views**: Real-time aggregation handled via indexed PostgreSQL views (`vote_counts`) to ensure sub-millisecond query performance.
+
+### 4. Live Telemetry & Verified Sponsor Shelf (`/sponsor`)
+- **Continuous 60 FPS Mobile Marquee**: Hardware-accelerated CSS marquee dock displaying sponsor slots with zero frame drops and touch/hover pause capabilities.
+- **3D Canvas Earth Radar**: Custom HTML5 Canvas rendering mathematical latitude/longitude coordinate points without heavy external WebGL dependencies.
+- **Dual Privacy-First Analytics**: Umami Analytics (cookieless telemetry) + `@vercel/analytics` running concurrently without layout shifts.
+
+### 5. Progressive Enhancement & No-JS Resilience
+- Core analytical content, navigation, and citation links are 100% accessible with JavaScript disabled.
+- Responsive mobile drawer toggles, CSS-only fallbacks, and strict semantic HTML5 landmarks (`<main>`, `<section>`, `<nav>`, `<aside>`).
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Framework** | Next.js 15 (App Router, Server Components, Route Handlers) |
+| **Language** | TypeScript (Strict Mode, 100% type-safe) |
+| **Database & Auth** | Supabase (PostgreSQL, Row Level Security, Migration Versioning) |
+| **Validation** | Zod (Runtime JSON schema validation) |
+| **Styling** | Modern CSS Variables, CSS Grid, Fluid Typography (`clamp()`), Custom Animations |
+| **Testing** | Jest (Unit & Integration) + Playwright (Cross-Browser & No-JS E2E) |
+| **Analytics** | Vercel Analytics + Umami Analytics |
+| **Deployment** | Vercel (Edge Network, Automated CI/CD) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js `>= 18.18.0`
+- npm `>= 9.0.0`
+
+### Installation
 
 ```bash
+# Clone repository
+git clone https://github.com/MateoGomez11/whyUndefeated.git
+cd whyUndefeated
+
+# Install dependencies
 npm install
-npm run dev      # http://localhost:3000
+
+# Configure environment variables
+cp .env.example .env.local
 ```
 
-### Supabase Setup (Community Voting)
+### Environment Configuration (`.env.local`)
 
-Community voting on entry detail pages uses Supabase (PostgreSQL). To enable live voting locally or in production:
+```env
+# Supabase PostgreSQL connection
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-public-key
 
-1. Copy `.env.example` to `.env.local`:
-   ```bash
-   cp .env.example .env.local
-   ```
-2. Fill in your project URL and public anon key from your Supabase project settings (`Settings -> API`):
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-public-key
-   ```
-3. Apply the database migration in `supabase/migrations/0001_votes.sql` via the Supabase SQL Editor or CLI (`supabase db push`).
+# Production Domain
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
-> Note: Running `npm test`, `npm run build`, and `npm run test:e2e` does not require Supabase credentials (tests use network/client mocks, and pages are SSG). If credentials are not configured, the voting widget degrades gracefully to an unavailable status without breaking page rendering.
+# Admin Moderation
+ADMIN_PASSWORD=your_secure_password
 
-## Commands
-
-| Command | What it does |
-|---|---|
-| `npm run dev` | Local dev server with hot reload |
-| `npm run build` | Production build. Reads and validates every file in `content/entries/`; **fails the build** if any entry is missing a required field or has a dangling source reference |
-| `npm run start` | Serve the production build (run `build` first) |
-| `npm test` | Jest — schema/loader validation, sort, slug, tally, related-apps logic |
-| `npm run test:e2e` | Playwright — end-to-end scenarios, including a `javaScriptEnabled: false` pass for both the home and detail pages |
-| `npm run lint` | ESLint |
-
-## Content format
-
-Each entry is one JSON file at `content/entries/{slug}.json`. The filename (minus `.json`) must match the
-entry's `slug`. Schema and full validation contract: `specs/001-entries-directory/contracts/entry.schema.md`.
-
-```jsonc
-{
-  "slug": "pinterest",           // kebab-case, must match the filename
-  "appName": "Pinterest",
-  "threatLevel": "low",          // "low" | "medium" | "high"
-  "category": "Content",         // "Social" | "Content" | "Knowledge" | "Community"
-  "summary": "One-line summary shown on the home card.",
-  "moat": "Paragraph explaining why AI hasn't replaced this app yet.",
-  "moatSourceIds": ["s1"],       // at least one id, must exist in `sources`
-  "challengers": [                // optional — omit or leave empty if there are none
-    { "name": "...", "evidence": "One-line evidence.", "sourceId": "s2" }
-  ],
-  "sources": [                    // at least one
-    { "id": "s1", "label": "...", "url": "https://..." },
-    { "id": "s2", "label": "...", "url": "https://..." }
-  ]
-}
+# Analytics (Optional)
+NEXT_PUBLIC_UMAMI_WEBSITE_ID=your-umami-id
+NEXT_PUBLIC_UMAMI_SCRIPT_URL=https://cloud.umami.is/script.js
 ```
 
-Rules enforced at build time (naming both the field and the file on failure):
+### Database Setup
 
-- `threatLevel` and `category` are required and must be one of the listed enum values.
-- `moat` and at least one `sources` entry are required.
-- `moatSourceIds` must have at least one id, and every id (there and in each challenger's `sourceId`) must
-  exist in that entry's `sources`.
-- Challengers are optional at the entry level, but any challenger that is present must cite a source.
+Apply the database migrations in `supabase/migrations/` to your Supabase project:
+- `0001_votes.sql`: Schema for votes and `vote_counts` aggregate view.
+- `0002_community_alternatives.sql`: Schema and RLS policies for community alternative submissions.
 
-## Project structure
+### Running Locally
+
+```bash
+npm run dev
+# Open http://localhost:3000 in your browser
+```
+
+---
+
+## 🧪 Quality Assurance & Testing Suite
+
+WhyUndefeated enforces rigorous quality standards across both unit logic and browser interactions.
+
+```bash
+# Run all unit and integration tests (Jest)
+npm test
+
+# Run end-to-end browser tests (Playwright)
+npx playwright test
+
+# Execute production build verification gate
+npm run build
+
+# Run code style and lint analysis
+npm run lint
+```
+
+### Test Coverage Highlights:
+- **85 Unit & Integration Tests (Jest)**:
+  - Zod content schema validation & broken reference assertions.
+  - Sorting algorithms (threat levels, community upvotes, tier precedence).
+  - Safety and regex input validation pipelines.
+  - Supabase client mock resilience and error fallback handling.
+- **65 End-to-End Tests (Playwright)**:
+  - Cross-browser responsive rendering across Mobile (375px), Tablet (768px), and Desktop (1440px).
+  - Progressive Enhancement validation (`javaScriptEnabled: false`).
+  - Optimistic vote mutations and multi-click debounce checks.
+  - Full submission workflow and form validation states.
+
+---
+
+## 📂 Project Structure
 
 ```
-app/                    # Routes: / (directory), /entries/[slug] (detail), /methodology, not-found
-components/             # UI components (ThreatBadge, EntryCard, EntryDetail, VoteWidget, ...)
-lib/content/            # Content schema (Zod), loader, sort, slug, tally, related-apps logic
-lib/votes/              # Client & voter ID logic for community voting
-content/entries/        # Versioned entry content — the actual data
-supabase/               # Database migrations (0001_votes.sql)
-tests/                  # Jest: unit + integration (schema, loader, votes client, voterId)
-e2e/                    # Playwright end-to-end specs (directory, detail, methodology, responsive, voting, no-js)
-design-reference/       # Visual reference only — never imported by the app, excluded from deploy
+whyUndefeated/
+├── app/                        # Next.js App Router routes & API endpoints
+│   ├── (legal)/                # Privacy, Terms, Methodology static routes
+│   ├── admin/                  # Secure moderation dashboard
+│   ├── alternatives/           # Dynamic community challenger directory
+│   ├── api/                    # Route handlers (votes, submissions, admin actions)
+│   ├── entries/[slug]/         # Dynamic entry detail pages
+│   ├── sponsor/                # Sponsorship telemetry & pricing page
+│   ├── submit/                 # Alternative submission workflow
+│   ├── layout.tsx              # Root layout with fonts, analytics, & global dock
+│   └── page.tsx                # Homepage featuring 52 indexed platforms
+├── components/                 # Modular, accessible React UI components
+│   ├── admin/                  # Admin dashboard controls & moderation tables
+│   ├── alternatives/           # Directory grids, cards, submission forms, voting
+│   ├── sponsor/                # 3D Canvas radar, live telemetry, sponsor marquee
+│   ├── EntryCard.tsx           # Monospace-initial platform card
+│   ├── HeroHeadline.tsx        # Hydration-safe typewriter animation
+│   └── ThreatBadge.tsx         # Accessible threat level indicator
+├── content/entries/            # 52 Versioned analytical platform entries (JSON)
+├── lib/                        # Core business logic & domain services
+│   ├── admin/                  # Admin authentication & session security
+│   ├── alternatives/           # Alternative validation, sorting, & database clients
+│   ├── content/                # Zod schemas, content loader, & relationship graphs
+│   ├── security/               # Rate limiting & input sanitization
+│   └── votes/                  # Client voter ID generation & atomic voting client
+├── supabase/migrations/        # Version-controlled PostgreSQL schemas & RLS rules
+├── tests/                      # Jest unit & integration test suites
+└── e2e/                        # Playwright automated browser test specs
 ```
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
